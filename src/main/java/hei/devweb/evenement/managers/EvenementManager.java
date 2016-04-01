@@ -1,51 +1,52 @@
 package hei.devweb.evenement.managers;
 
-import java.util.List;
-
-import hei.devweb.evenement.daos.EvenementDaoImpl;
 import hei.devweb.evenement.daos.EvenementDao;
-
+import hei.devweb.evenement.daos.EvenementDaoImpl;
 import hei.devweb.evenement.entites.Evenement;
+
+import java.util.List;
 
 public class EvenementManager {
 
-	private static EvenementManager instance;
-	
-	private EvenementDao EvenementDao = new EvenementDaoImpl();
+    private static EvenementManager instance;
 
-	public static EvenementManager getInstance() {
-		if (instance == null) {
-			instance = new EvenementManager();
-		}
-		return instance;
-	}
+    private EvenementDao EvenementDao = new EvenementDaoImpl();
 
-	private EvenementManager() {
-	}
+    public static EvenementManager getInstance() {
+        if (instance == null) {
+            instance = new EvenementManager();
+        }
+        return instance;
+    }
 
-	public List<Evenement> listerEvenements() {
-		return EvenementDao.listerEvenements();
-	
-	}
-	
-	
-	public void ajouterEvenement(Evenement nouvelEvenement) {
-		// TODO Auto-generated method stub
-		System.out.println("Dans Méthode : ajouterEvenement");
-		/*
+    private EvenementManager() {
+    }
+
+    public List<Evenement> listerEvenements() {
+        return EvenementDao.listerEvenements();
+
+    }
+
+
+    public void ajouterEvenement(Evenement nouvelEvenement) {
+        // TODO Auto-generated method stub
+        System.out.println("Dans Méthode : ajouterEvenement");
+        /*
 		if (nouvelEvenement == null) {
 			throw new IllegalArgumentException("L'évenement à ajouter ne peut pas être null.");
 		}
 		*/
-		EvenementDao.ajouterEvenement(nouvelEvenement);
-	}	
-	
-	
-	public void modifierEvenement(Evenement newEvenement){
-		EvenementDao.modifierEvenement(newEvenement);
-	}
-;	
-	public void supprimerEvenement(Integer evenement_id ){
-		EvenementDao.supprimerEvenement(evenement_id);
-	}
+        EvenementDao.ajouterEvenement(nouvelEvenement);
+    }
+
+
+    public void modifierEvenement(Evenement newEvenement) {
+        EvenementDao.modifierEvenement(newEvenement);
+    }
+
+    ;
+
+    public void supprimerEvenement(Integer evenement_id) {
+        EvenementDao.supprimerEvenement(evenement_id);
+    }
 }
