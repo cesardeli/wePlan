@@ -1,0 +1,14 @@
+header{
+	padding: 0px;
+
+	height: 250px;
+
+	background-image:url("./../IMG/ban_cesar_flou.jpg");
+	background-size: 100%;
+	background-position:center center;
+
+	text-align: center;
+	vertical-align: middle;
+
+	color: white;
+}

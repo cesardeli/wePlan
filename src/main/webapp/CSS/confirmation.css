@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'corbert';
+	    src: url('../font/Corbert-Regular.otf') format('truetype'),
+    	 url('../font/Corbert-Italic.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+#ban h1{
+	letter-spacing: 0.15em;
+	padding-top: 40px;
+	margin-bottom: 0px;
+	line-height: 120px;
+	font-size: 120px;
+
+	font-weight: lighter;
+}
+
+#ban h2{
+	margin: 0px;
+	line-height: 0px;
+	font-size: 40px;
+	font-weight: lighter;
+
+
+}
+body{
+	font-family: corbert,helvetica;
+	margin: 0px;
+	background-color: #fafafa;
+
+}
+
+div#contenu{
+	display: -webkit-flex; 
+    display: block;
+
+    padding-top: 20px;
+
+    width: 70%;
+    margin: auto;
+    margin-top:25px;
+}
+
+
+
+article h1{
+	margin: 0px;
+	margin-top: 34px;
+
+	line-height: 10px;
+	font-size: 26px;
+	font-weight: lighter;
+
+
+	color: 989898;
+}
+
+article{
+	min-height: 150px;
+	margin-bottom: 15px;
+
+	background-color: white;
+
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-width:1px;
+	border-style: solid;
+	border-top-color: f1f1f1;
+	border-left-color: dadada;
+	border-bottom-color: c3c3c3;
+	border-right-color: e0e0e0;
+
+	color: 989898;
+}
+
+
+ p{
+	margin-top: 30px;
+}
+
+a{
+	color:518dff;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-left: 2px;
+}

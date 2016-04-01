@@ -1,0 +1,169 @@
+@font-face {
+	font-family: 'corbert';
+	    src: url('font/Corbert-Regular.otf') format('truetype'),
+    		 url('font/Corbert-Italic.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}	 
+
+
+#ban h1{
+	letter-spacing: 0.15em;
+	padding-top: 40px;
+	margin-bottom: 0px;
+	line-height: 120px;
+	font-size: 120px;
+
+	font-weight: lighter;
+}
+
+#vieasso{
+	color:518dff;
+	text-decoration: none;
+	margin-left: 2px;
+}
+
+.choix{
+	text-decoration: none;
+	color:518dff;
+}
+
+#ban h2{
+	margin: 0px;
+	line-height: 0px;
+	font-size: 40px;
+	font-weight: lighter;
+
+
+}
+
+body{
+	font-family: corbert,helvetica;
+
+	margin: 0px;
+
+	background-color: #fafafa;
+}
+
+a#deconnexion{
+    text-decoration: none;
+
+    float: right;
+
+	margin-right: 20px;
+	color: #9E4040;	
+}
+
+#deconnexion img{
+	height: 20px;
+	width: 20px;
+}
+
+
+#contenu h1{
+	margin: 0px;
+
+	line-height: 10px;
+	font-size: 40px;
+	font-weight: lighter;
+
+
+	color: 989898;
+}
+
+#contenu h2{
+	color : 989898;
+	margin-bottom: 0px;
+
+	font-size: 18px;
+
+	font-weight: lighter;
+
+}
+div#contenu{
+    display: block;
+
+    padding-top: 20px;
+
+    width: 70%;
+    margin: auto;
+}
+
+.choix img{
+	height: 20px;
+	width: 20px;
+	color:e0e0e0; 
+
+}
+
+article{
+	min-height: 100px;
+	margin-bottom: 15px;
+
+	background-color: white;
+
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-width:1px;
+	border-style: solid;
+	border-top-color: f1f1f1;
+	border-left-color: dadada;
+	border-bottom-color: c3c3c3;
+	border-right-color: e0e0e0;
+}
+
+article ul {
+	padding-left: 0px;
+	
+}
+article li  {
+	
+	
+	list-style-type: none; 
+	
+	color: 989898;
+}
+
+article .menu li{
+	display: inline-block;	
+
+	padding-right: 10px;
+
+	border-right: solid;
+	border-color:e0e0e0; 
+	border-width:1px;
+
+}
+
+article .menu a{
+	color: 518dff;
+	text-decoration: none;
+
+}
+
+
+
+article .informations input{
+	border:solid;
+	border-color:518dff; 
+	border-width: 1px;
+	border-radius: 2px;
+	color:989898;
+	font-family: corbert,helvetica;
+
+	margin-top: 20px;
+	margin-right: 10px;
+
+}
+
+ #titre{
+ 	width: 300px;
+ }
+
+ #description{
+ 	line-height:10px;
+ 	height: 150px;
+ 	width: 300px;
+ }
+

@@ -1,0 +1,146 @@
+@font-face {
+	font-family: 'corbert';
+	    src: url('../font/Corbert-Regular.otf') format('truetype'),
+    	 url('../font/Corbert-Italic.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+#ban h1{
+	letter-spacing: 0.15em;
+	padding-top: 40px;
+	margin-bottom: 0px;
+	line-height: 120px;
+	font-size: 120px;
+
+	font-weight: lighter;
+}
+
+#ban h2{
+	margin: 0px;
+	line-height: 0px;
+	font-size: 40px;
+	font-weight: lighter;
+
+
+}
+body{
+	font-family: corbert,helvetica;
+	margin: 0px;
+	background-color: #fafafa;
+
+}
+
+
+div#contenu{
+	display: -webkit-flex; 
+    display: block;
+    padding-top: 15px;
+    width: 30%;
+    min-width: 300px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    
+border-width:1px;
+	border-style: solid;
+	border-top-color: f1f1f1;
+	border-left-color: dadada;
+	border-bottom-color: c3c3c3;
+	border-right-color: e0e0e0;
+	text-align: center;
+
+}
+
+.titre{
+	color:518dff;
+	font-size: 17px;
+	font-weight: normal;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+#inscription{
+	text-decoration: none;
+}
+section{
+
+	 background: white;
+	 background-size: contain;
+ 	padding: 0px;
+ 	margin: 0px;
+
+    border-width:1px;
+	border-style: solid;
+	border-top-color: f1f1f1;
+	border-left-color: dadada;
+	border-bottom-color: c3c3c3;
+	border-right-color: e0e0e0;
+	text-align: center;
+
+
+
+    
+}
+
+
+
+section h2{
+	font-size: 30px;
+    color: #555;
+    margin-top: 15px;
+   font-weight: lighter;
+}
+
+form {
+    margin-top: 30px;
+     height: 200px;
+ 
+}
+
+.formulaire{
+	padding: 8px;
+}
+.formulaire input{
+	text-align: center;
+	width: 250px;
+	height: 30px;
+	border-color:518dff;
+	border-style: solid;
+	border-width: 1px;
+
+}
+
+
+input.form-control ,.btn {
+    font-family: corbert;
+}
+
+
+
+
+.btn {
+    transition: all ease-in-out 0.2s;
+    width:250px;
+    height: 40px;
+ box-shadow:1px 1px 1px ;
+ cursor:pointer;
+ background-color:518dff;
+ color:white;
+ border-radius:4px;
+
+
+}
+
+ #aide{
+	display:block;
+	float:right;
+	color:518dff;
+	margin-right: 5px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
