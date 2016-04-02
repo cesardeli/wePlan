@@ -1,11 +1,23 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8" ></meta>
-		<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+
+
+		<meta charset="UTF-8" />
+		<%--<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="CSS/header.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
-		
+		<link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />--%>
+
 		<title>We Plan</title>
 		<link rel="shortcut icon" href="../IMG/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="../IMG/favicon.ico" type="image/x-icon">
@@ -31,11 +43,11 @@
 
 			<section>
 				<h1>
-					Ajouter un événement
+					Ajouter un ï¿½vï¿½nement
 				</h1>
 
 				<h2>
-					Le mail avec la declaration d'événement a bien été envoyé a  l'adresse <a href="" id="vieasso">vie.associative@hei.fr</a>?
+					Le mail avec la declaration d'ï¿½vï¿½nement a bien ï¿½tï¿½ envoyï¿½ aï¿½ l'adresse <a href="" id="vieasso">vie.associative@hei.fr</a>?
 				</h2>
 
 			</section>
@@ -44,8 +56,8 @@
 
 			<article>
 				<form method="post" action="ajouter">
-				
-			
+
+
 				<ul class="menu">
 					<li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png"> Enregistrer</input></a></li>
 					<li><a href="" class="choix"><img src="IMG/annuler.png"> Annuler</a></li>
@@ -54,17 +66,17 @@
 
 				<ul class="informations">
 					<li >
-											
-						<input id="titre" type="text" name="evenement_nom" placeholder="Titre de l'évènement" required="Veuillez ajouter un titre" required></li>
+
+						<input id="titre" type="text" name="evenement_nom" placeholder="Titre de l'ï¿½vï¿½nement" required="Veuillez ajouter un titre" required></li>
 					<li >
-						<input id="lieu" type="text" name="evenement_lieu" placeholder="Lieu de l'évènement" required>
-						<input type="checkbox" name"evenement_prive" value="Privé"> Privé </li>
+						<input id="lieu" type="text" name="evenement_lieu" placeholder="Lieu de l'ï¿½vï¿½nement" required>
+						<input type="checkbox" name"evenement_prive" value="Privï¿½"> Privï¿½ </li>
 					<li >
-						<input id="debut" type="date" name="evenement_date_debut" required="Veuillez ajouter une date" required> 
+						<input id="debut" type="date" name="evenement_date_debut" required="Veuillez ajouter une date" required>
 						<input type="time" name="evenement_heure_debut">
 					</li>
 					<li >
-						<input id="fin" type="date" name="evenement_date_fin" required="Veuillez ajouter une date" required> 
+						<input id="fin" type="date" name="evenement_date_fin" required="Veuillez ajouter une date" required>
 						<input type="time" name="heurefin" value="Heure de fin">
 					</li>
 
@@ -74,29 +86,35 @@
 
 
 
-					
+
 					<div class="fichier">
-						<input  id="declaration" type="text" placeholder="Déposez votre déclaration de manifestation ICI" name="fichier"  >
-						<a class ="choix" href="http://images.google.fr/imgres?imgurl=https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMOAAAAJGQ4MWIxNzdhLTZkMmUtNDRlZi05ODczLWIxZTVjMDkwMzdjNw.jpg&imgrefurl=https://fr.linkedin.com/in/cesardeligny&h=200&w=200&tbnid=w5OVHGl2nGKimM:&tbnh=90&tbnw=90&docid=j1eiEap0BQiDOM&usg=__Nxx2R-PopXyys7FwYRsgcxnVMoU=&sa=X&ved=0ahUKEwi9huPWqsXKAhXGCBoKHTkKDgMQ9QEIHjAA"> 
+						<input  id="declaration" type="text" placeholder="Dï¿½posez votre dï¿½claration de manifestation ICI" name="fichier"  >
+						<a class ="choix" href="http://images.google.fr/imgres?imgurl=https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMOAAAAJGQ4MWIxNzdhLTZkMmUtNDRlZi05ODczLWIxZTVjMDkwMzdjNw.jpg&imgrefurl=https://fr.linkedin.com/in/cesardeligny&h=200&w=200&tbnid=w5OVHGl2nGKimM:&tbnh=90&tbnw=90&docid=j1eiEap0BQiDOM&usg=__Nxx2R-PopXyys7FwYRsgcxnVMoU=&sa=X&ved=0ahUKEwi9huPWqsXKAhXGCBoKHTkKDgMQ9QEIHjAA">
 							Selectionner un fichier
 						</a>
 					</div>
 				 </ul>
-				 
+
 				 </form>
-			
+
 
 			</article>
 
 
-			
+
 
 		</div>
-		
+
 		<footer>
-			<p>Ce super site a été réalisé par Constance SALLE et César DELIGNY</p>
+			<p>Ce super site a ï¿½tï¿½ rï¿½alisï¿½ par Constance SALLE et Cï¿½sar DELIGNY</p>
 			<p>Pour le BDE Spacem'Hein.</p>
-	</footer>
+	    </footer>
+
+
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../js/materialize.js"></script>
 
 	</body>
 
