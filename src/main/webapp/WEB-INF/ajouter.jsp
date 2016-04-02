@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<html>
+<html lang="fr">
+
 
 <head>
 	<!--Import Google Icon Font-->
@@ -241,6 +242,10 @@
 						<i class="material-icons right">save</i>
 					</button>
 				</div>
+
+				<li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png"> Enregistrer</input></a></li>
+
+
 				<div class="col s6 m3">
 					<a class="btn red waves-effect waves-light">Annuler
 						<i class="material-icons right">cancel</i>
@@ -384,7 +389,6 @@
 
 
 				<ul class="menu">
-					<li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png"> Enregistrer</input></a></li>
 					<li><a href="" class="choix"><img src="IMG/annuler.png"> Annuler</a></li>
 					<li><a href="" class="choix"><input type="submit" value="Supprimer"><img src="IMG/supprimer.png"> Supprimer</a></li>				</ul>
 

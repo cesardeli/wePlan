@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <!--Import Google Icon Font-->
@@ -51,6 +50,8 @@
 </nav>
 
 
+
+
 <div class="container">
 
     <div class="card-panel grey lighten-4" style="box-shadow: none; margin-bottom: 0;">
@@ -68,39 +69,34 @@
     </div>
 
 
-    <c:forEach var="evenements" items="${evenements}">
+    <div class="card-panel white">
+        <p>
+        Nom : ${evenements.evenement_nom},
 
-        <div class="card-panel white">
-            <p>
-                Nom : ${evenements.evenement_nom},
-            </p>
+        <p>
+            Date d�but: ${evenements.evenement_date_debut},
+            Heure d�but : ${evenements.evenement_heure_debut} ,
+        </p>
 
-            <p>
-                Date début: ${evenements.evenement_date_debut},
-                Heure début : ${evenements.evenement_heure_debut} ,
-            </p>
+        <p>
+            Date fin : ${evenements.evenement_date_fin },
+            Heure fin : ${evenements.evenement_heure_fin },
+        </p>
 
-            <p>
-                Date fin : ${evenements.evenement_date_fin },
-                Heure fin : ${evenements.evenement_heure_fin },
-            </p>
-
-            <c:if test="${not evenement.evenement_prive}">Evenement prive Lieu : ${evenements.evenement_lieu }</c:if>
+        <c:if test="${not evenement.evenement_prive}">Evenement prive Lieu : ${evenements.evenement_lieu }</c:if>
 
 
-            <p>
-                Lieu : ${evenements.evenement_lieu }
+        <p>
+            Lieu : ${evenements.evenement_lieu }
 
-            <p>
+        <p>
 
-            <p>
-                Description: ${evenements.evenement_description}
-            </p>
+        <p>
+            Description: ${evenements.evenement_description}
+        </p>
 
 
-        </div>
-    </c:forEach>
-
+    </div>
 
 </div>
 
