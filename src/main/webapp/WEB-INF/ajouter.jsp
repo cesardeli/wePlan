@@ -1,27 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <html lang="fr">
 
 
 <head>
-	<!--Import Google Icon Font-->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="css/surcouche.css" media="screen,projection"/>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/surcouche.css" media="screen,projection"/>
 
-	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
-	<meta charset="UTF-8"/>
-	<!--<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="UTF-8"/>
+    <!--<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
     <link href="CSS/header.css" rel="stylesheet" type="text/css" media="all" />
     <link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />-->
 
-	<title>We Plan</title>
-	<link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="IMG/favicon.ico" type="image/x-icon">
+    <title>We Plan</title>
+    <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="IMG/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -29,234 +29,240 @@
 <body class="grey lighten-4">
 
 <div class="card small header">
-	<div class="card-image">
-		<img class="responsive-img" src="IMG/ban_cesar_flou.jpg">
+    <div class="card-image">
+        <img class="responsive-img" src="IMG/ban_cesar_flou.jpg">
 
-		<div class="card-title">
-			<h1>We Plan</h1>
-			<h5>Toute la vie associative de HEI</h5>
+        <div class="card-title">
+            <h1>We Plan</h1>
+            <h5>Toute la vie associative de HEI</h5>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <ul id="dropdown1" class="dropdown-content">
-	<li class="divider"></li>
-	<li><a href="#!">three</a></li>
-	<li class="divider"></li>
-	<li><a href="#!">three</a></li>
-	<li class="divider"></li>
-	<li><a href="#!">three</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
 </ul>
 
 <nav>
-	<div class="nav-wrapper red">
-		<ul id="nav-mobile" class="right">
-			<li>
-				<a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-			</li>
-			<li><a href="collapsible.html"><i class="material-icons left">power_settings_new</i> Deconnexion</a></li>
-		</ul>
-	</div>
+    <div class="nav-wrapper red">
+        <ul id="nav-mobile" class="right">
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+            <li><a href="collapsible.html"><i class="material-icons left">power_settings_new</i> Deconnexion</a></li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container">
 
 
-	<div class="card-panel white">
+    <div class="card-panel white">
 
 
-		<h2 class="center blue-text" style="font-weight: 300;">
-			Ajouter un événement
-		</h2>
+        <h2 class="center blue-text" style="font-weight: 300;">
+            Ajouter un événement
+        </h2>
 
 
-		<div method="post" action="ajouter">
+        <form method="post" action="ajouter">
+
+            <div class="row">
 
 
-			<!--                <ul class="menu">
+                <!-- ************ Informations générales *********   -->
+
+                <span class="flow-text col offset-m2">Informations générales</span>
 
 
+                <div class="input-field col offset-m2 s12 m8">
+                    <input id="titre" type="text" name="evenement_nom" class="validate" required>
+                    <label for="titre">Titre de l'événement</label>
+                </div>
 
+            </div>
 
+            <div class="row">
 
-                                <li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png">
-                                    Enregistrer</input></a></li>
-                                <li><a href="" class="choix"><img src="IMG/annuler.png"> Annuler</a></li>
-                                <li><a href="" class="choix"><input type="submit" value="Supprimer"><img src="IMG/supprimer.png">
-                                    Supprimer</a></li>
-                            </ul>-->
+                <div class="input-field col offset-m2 s8 m6">
+                    <input id="lieu" type="text" name="evenement_lieu" class="validate" required>
+                    <label for="lieu">Lieu</label>
+                </div>
 
+                <div class="input-field col s4 m2">
+                    <input type="checkbox" id="prive" name="evenement_prive" checked="checked"/>
+                    <label for="prive">Lieu privé</label>
+                </div>
 
-			<div class="row">
-				<span class="flow-text col offset-m2">Informations générales</span>
+            </div>
 
-				<div class="input-field col offset-m2 s12 m8">
-					<input id="eventName" type="text" class="validate">
-					<label for="eventName">Titre de l'événement</label>
-				</div>
+            <div class="row">
+                <div class="input-field col offset-m2 s12 m8">
+                    <textarea id="description" class="materialize-textarea" name="evenement_description"
+                              length="120"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
 
-			</div>
-
-			<div class="row">
-
-				<div class="input-field col offset-m2 s8 m6">
-					<input id="eventPlace" type="text" class="validate">
-					<label for="eventPlace">Lieu</label>
-				</div>
-
-				<div class="input-field col s4 m2">
-					<input type="checkbox" id="eventPrivacy" checked="checked"/>
-					<label for="eventPrivacy">Lieu privé</label>
-				</div>
-
-			</div>
-
-			<div class="row">
-				<div class="input-field col offset-m2 s12 m8">
-					<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-					<label for="textarea1">Description</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col offset-m2 s12 m8">
-					<div class="file-field input-field">
-						<div class="btn blue">
-							<span>Fichier</span>
-							<input type="file">
-						</div>
-						<div class="file-path-wrapper">
-							<input class="file-path validate" type="text" placeholder="Déclaration de l'événement">
-						</div>
-					</div>
-				</div>
-				<div class="col s12 m8 offset-m2">
+            <div class="row">
+                <div class="input-field col offset-m2 s12 m8">
+                    <div class="file-field input-field">
+                        <div class="btn blue">
+                            <span>Fichier</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Déclaration de l'événement">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m8 offset-m2">
                     <span class="red-text">
                         <i class="material-icons tiny">warning</i> La declaration d'événement a bien été envoyé à
                         l'adresse vie.associative@hei.fr?
                     </span>
-				</div>
-			</div>
-			<!--end row    -->
+                </div>
+            </div>
 
 
-			<div class="row">
-				<span style="margin-top: 20px;" class="flow-text col offset-m2">Début</span>
-			</div>
+            <!-- ************ Début *********   -->
 
-			<div class="row">
-				<div class="input-field col offset-m2 s12 m8">
-					<label for="eventDate">Date de début</label>
-					<input type="text" id="eventDate" class="datepicker"/>
-				</div>
-			</div>
+            <div class="row">
+                <span style="margin-top: 20px;" class="flow-text col offset-m2">Début</span>
+            </div>
 
-			<div class="row">
-				<div class="input-field col offset-m2 s6 m4">
-					<select>
-						<option style=" text-align: right;" value="" disabled selected>Heure de début</option>
-						<option style="text-align: right;" value="1">08 heures</option>
-						<option value="2">09 heures</option>
-						<option value="3">10 heures</option>
-						<option value="4">11 heures</option>
-						<option value="2">12 heures</option>
-						<option value="2">13 heures</option>
-						<option value="2">14 heures</option>
-						<option value="2">15 heures</option>
-						<option value="2">16 heures</option>
-						<option value="2">17 heures</option>
-						<option value="2">18 heures</option>
-						<option value="2">19 heures</option>
-						<option value="2">20 heures</option>
-						<option value="2">21 heures</option>
-						<option value="2">22 heures</option>
-					</select>
-				</div>
+            <div class="row">
+                <div class="input-field col offset-m2 s12 m8">
+                    <label for="debut">Date de début</label>
+                    <input type="date" id="debut" name="evenement_date_debut" class="datepicker"/>
+                </div>
+            </div>
 
-
-				<div class="input-field col s6 m4">
-					<select>
-						<option value="" disabled selected>Minute</option>
-						<option value="0">00 minute</option>
-						<option value="2">15 minutes</option>
-						<option value="2">30 minutes</option>
-						<option value="2">45 minutes</option>
-
-					</select>
-				</div>
-			</div>
+            <div class="row">
+                <div class="input-field col offset-m2 s6 m4">
+                    <select>
+                        <option style=" text-align: right;" value="" disabled selected>Heure de début</option>
+                        <option style="text-align: right;" value="1">08 heures</option>
+                        <option value="2">09 heures</option>
+                        <option value="3">10 heures</option>
+                        <option value="4">11 heures</option>
+                        <option value="2">12 heures</option>
+                        <option value="2">13 heures</option>
+                        <option value="2">14 heures</option>
+                        <option value="2">15 heures</option>
+                        <option value="2">16 heures</option>
+                        <option value="2">17 heures</option>
+                        <option value="2">18 heures</option>
+                        <option value="2">19 heures</option>
+                        <option value="2">20 heures</option>
+                        <option value="2">21 heures</option>
+                        <option value="2">22 heures</option>
+                    </select>
+                </div>
 
 
-			<div class="row">
-				<span class="flow-text col offset-m2">Fin</span>
-			</div>
+                <div class="input-field col s6 m4">
+                    <select>
+                        <option value="" disabled selected>Minute</option>
+                        <option value="0">00 minute</option>
+                        <option value="2">15 minutes</option>
+                        <option value="2">30 minutes</option>
+                        <option value="2">45 minutes</option>
 
-			<div class="row">
-				<div class="input-field col offset-m2 s12 m8">
-					<label for="eventDate">Date</label>
-					<input type="text" id="eventDate" class="datepicker"/>
-				</div>
-			</div>
-
-			<div class="row">
-
-				<div class="input-field col offset-m2 s6 m4">
-					<select>
-						<option value="" disabled selected>Heure</option>
-						<option value="1">08 heures</option>
-						<option value="2">09 heures</option>
-						<option value="3">10 heures</option>
-						<option value="4">11 heures</option>
-						<option value="2">12 heures</option>
-						<option value="2">13 heures</option>
-						<option value="2">14 heures</option>
-						<option value="2">15 heures</option>
-						<option value="2">16 heures</option>
-						<option value="2">17 heures</option>
-						<option value="2">18 heures</option>
-						<option value="2">19 heures</option>
-						<option value="2">20 heures</option>
-						<option value="2">21 heures</option>
-						<option value="2">22 heures</option>
-					</select>
-					<label>Fin</label>
-				</div>
-				<div class="input-field col s6 m4">
-					<select>
-						<option value="" disabled selected>Minute</option>
-						<option value="0">00</option>
-						<option value="2">15</option>
-						<option value="2">30</option>
-						<option value="2">45</option>
-
-					</select>
-				</div>
-			</div>
+                    </select>
+                </div>
+            </div>
 
 
-			<div class="row">
-				<div class="col offset-m3 s6 m3">
-					<button style="background-color: #7AAC15;" class="btn waves-effect waves-light" type="submit"
-							name="action">Enregistrer
-						<i class="material-icons right">save</i>
-					</button>
-				</div>
-
-				<li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png"> Enregistrer</input></a></li>
+            <!-- ************ Fin *********   -->
 
 
-				<div class="col s6 m3">
-					<a class="btn red waves-effect waves-light">Annuler
-						<i class="material-icons right">cancel</i>
-					</a>
-				</div>
-			</div>
-		</div>
-		<!--end row    -->
+            <div class="row">
+                <span class="flow-text col offset-m2">Fin</span>
+            </div>
+
+            <div class="row">
+                <div class="input-field col offset-m2 s12 m8">
+                    <label for="eventDate">Date</label>
+                    <input type="text" id="eventDate" class="datepicker"/>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="input-field col offset-m2 s6 m4">
+                    <select>
+                        <option value="" disabled selected>Heure</option>
+                        <option value="8">08 heures</option>
+                        <option value="9">09 heures</option>
+                        <option value="10">10 heures</option>
+                        <option value="11">11 heures</option>
+                        <option value="12">12 heures</option>
+                        <option value="13">13 heures</option>
+                        <option value="14">14 heures</option>
+                        <option value="15">15 heures</option>
+                        <option value="16">16 heures</option>
+                        <option value="17">17 heures</option>
+                        <option value="18">18 heures</option>
+                        <option value="19">19 heures</option>
+                        <option value="20">20 heures</option>
+                        <option value="21">21 heures</option>
+                        <option value="22">22 heures</option>
+                    </select>
+                    <label>Fin</label>
+                </div>
+                <div class="input-field col s6 m4">
+                    <select>
+                        <option value="" disabled selected>Minute</option>
+                        <option value="0">00</option>
+                        <option value="2">15</option>
+                        <option value="2">30</option>
+                        <option value="2">45</option>
+
+                    </select>
+                </div>
+            </div>
 
 
-		<!--<ul class="informations">
+            <!-- ************ Boutons *********   -->
+
+            <div class="row">
+                <div class="col offset-m3 s6 m3">
+                    <button style="background-color: #7AAC15;" class="btn waves-effect waves-light" type="submit"
+                            name="action">Enregistrer
+                        <i class="material-icons right">save</i>
+                    </button>
+                </div>
+
+                <%--<a href="" class="choix"><input type="submit" value="Enregistrer">
+                    Enregistrer</input></a>--%>
+
+
+                <div class="col s6 m3">
+                    <a class="btn red waves-effect waves-light">Annuler
+                        <i class="material-icons right">cancel</i>
+                    </a>
+                </div>
+            </div>
+        </form>
+
+
+        <%--<ul class="menu">
+            <li><a href="" class="choix"><input type="submit" value="Enregistrer"><img src="IMG/disquette.png">
+                Enregistrer</input></a></li>
+            <li><a href="" class="choix"><img src="IMG/annuler.png"> Annuler</a></li>
+            <li><a href="" class="choix"><input type="submit" value="Supprimer"><img src="IMG/supprimer.png">
+                Supprimer</a></li>
+        </ul>--%>
+
+
+        <!--<ul class="informations">
             <li>
 
                 <input id="titre" type="text" name="evenement_nom" placeholder="Titre de l'�v�nement"
@@ -292,29 +298,22 @@
             </div>
         </ul>-->
 
-		</form>
+        </form>
 
 
-	</div>
+    </div>
 
 </div>
 
 
 <footer style="background-color: #dd3333;" class="page-footer">
-	<div class="footer-copyright">
-		<div class="container">
-			© 2016 Site réalisé par César DELIGNY & Constance SALLE
-			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-		</div>
-	</div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2016 Site réalisé par César DELIGNY & Constance SALLE
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
 </footer>
-
-
-<!--<footer>
-    <p>Ce super site a �t� r�alis� par Constance SALLE et C�sar DELIGNY</p>
-
-    <p>Pour le BDE Spacem'Hein.</p>
-</footer>-->
 
 
 <!--Import jQuery before materialize.js-->
