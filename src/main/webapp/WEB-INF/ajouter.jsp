@@ -13,7 +13,7 @@
 
 
 
-		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<%--<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="CSS/header.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />--%>
