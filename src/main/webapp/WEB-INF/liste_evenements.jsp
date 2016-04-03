@@ -109,7 +109,7 @@
     <div class="footer-copyright">
         <div class="container">
             © 2016 Site réalisé par César DELIGNY & Constance SALLE
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/boulkiyheis2012/?fref=ts">BDE HEI</a>
         </div>
     </div>
 </footer>
