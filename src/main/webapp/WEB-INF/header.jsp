@@ -5,7 +5,7 @@
 	<title>We Plan</title>
 
 	<!--Import Google Icon Font-->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.css"/>
 	<link type="text/css" rel="stylesheet" href="css/surcouche.css"/>
