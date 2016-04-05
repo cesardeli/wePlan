@@ -1,54 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../css/surcouche.css" media="screen,projection"/>
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-
-    <meta charset="UTF-8"/>
-    <!--<link href="CSS/ajouter.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="CSS/header.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />-->
-
-    <title>We Plan</title>
-    <link rel="shortcut icon" href="../IMG/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../IMG/favicon.ico" type="image/x-icon">
-
-</head>
+<%@ include file="header.jsp" %>
 
 
 <body class="grey lighten-4">
 
-
-<div class="card small header">
-    <div class="card-image">
-        <img class="responsive-img" src="../IMG/ban_cesar_flou.jpg">
-
-        <div class="card-title">
-            <h1>We Plan</h1>
-            <h5>Toute la vie associative de HEI</h5>
-
-        </div>
-    </div>
-</div>
-
-<nav>
-    <div class="nav-wrapper red">
-        <ul id="nav-mobile" class="right">
-            <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-            </li>
-            <li><a href="collapsible.html"><i class="material-icons left">power_settings_new</i> Deconnexion</a></li>
-        </ul>
-    </div>
-</nav>
+<%@include file="menu.jsp" %>
 
 
 <div class="container">
@@ -70,7 +30,31 @@
 
     <c:forEach var="evenements" items="${evenements}">
 
+
         <div class="card-panel white">
+
+
+            <div class="row">
+
+                <form method="get" action="supprimer">
+                    <div class="row">
+                        <input type="hidden" name="ID" value="${evenements.evenement_id}">
+                        <button class="btn-floating red" type="submit"
+                                name="delete_event">Supprimer
+                            <i class="material-icons right">delete</i>
+                        </button>
+                    </div>
+                </form>
+
+
+                <a class="btn-floating green" onclick=""><i class="material-icons">mode_edit</i></a>
+                <a class="btn-floating red"><i class="material-icons">delete</i></a>
+            </div>
+
+            <p>
+                ID : ${evenements.evenement_id},
+            </p>
+
             <p>
                 Nom : ${evenements.evenement_nom},
             </p>
@@ -105,20 +89,8 @@
 </div>
 
 
-<footer style="background-color: #dd3333;" class="page-footer">
-    <div class="footer-copyright">
-        <div class="container">
-            © 2016 Site réalisé par César DELIGNY & Constance SALLE
-            <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/boulkiyheis2012/?fref=ts">BDE HEI</a>
-        </div>
-    </div>
-</footer>
-
-
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="../js/materialize.js"></script>
-<script type="text/javascript" src="../js/init.js"></script>
+<%@ include file="footer.jsp" %>
 
 </body>
+
 </html>

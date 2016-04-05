@@ -185,8 +185,8 @@
 
 
                 <div class="col s6 m3">
-                    <a class="btn red waves-effect waves-light">Annuler
-                        <i class="material-icons right">cancel</i>
+                    <a class="btn red waves-effect waves-light" href=javascript:history.go(-1)>Annuler
+                    <i class="material-icons right">cancel</i>
                     </a>
                 </div>
             </div>
