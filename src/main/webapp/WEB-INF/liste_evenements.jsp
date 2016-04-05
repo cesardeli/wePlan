@@ -36,19 +36,18 @@
 
             <div class="row">
 
+                <div class="col">
+                    <a class="btn-floating green" onclick=""><i class="material-icons">mode_edit</i></a>
+                </div>
                 <form method="get" action="supprimer">
-                    <div class="row">
+                    <div class="col">
                         <input type="hidden" name="ID" value="${evenements.evenement_id}">
                         <button class="btn-floating red" type="submit"
-                                name="delete_event">Supprimer
-                            <i class="material-icons right">delete</i>
+                                name="delete_event">
+                            <i class="material-icons">delete</i>
                         </button>
                     </div>
                 </form>
-
-
-                <a class="btn-floating green" onclick=""><i class="material-icons">mode_edit</i></a>
-                <a class="btn-floating red"><i class="material-icons">delete</i></a>
             </div>
 
             <p>
