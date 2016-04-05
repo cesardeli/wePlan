@@ -11,6 +11,8 @@ import java.sql.Statement;
 import java.util.Date;
 import java.util.List;
 
+import java.sql.Connection;
+
 public class EvenementDaoTestCase {
 
     private EvenementDao evenementDao = new EvenementDaoImpl();
