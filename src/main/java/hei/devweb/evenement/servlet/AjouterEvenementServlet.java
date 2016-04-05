@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 @WebServlet("/ajouter")
@@ -59,7 +56,7 @@ public class AjouterEvenementServlet extends HttpServlet {
         System.out.println("AjouterEvenementServlet");
         System.out.println("Nom : " + evenement_nom);
         System.out.println("Lieu : " + evenement_lieu);
-        System.out.println("Description : " +evenement_description);
+        System.out.println("Description : " + evenement_description);
         //System.out.println("Prive : " +evenement_prive);
         //System.out.println("Date début : " + evenement_date_debut);
         //System.out.println("String Heure début : " +Sevenement_heure_debut);

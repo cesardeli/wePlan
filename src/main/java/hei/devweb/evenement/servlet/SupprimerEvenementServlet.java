@@ -1,6 +1,5 @@
 package hei.devweb.evenement.servlet;
 
-import hei.devweb.evenement.entites.Evenement;
 import hei.devweb.evenement.managers.EvenementManager;
 
 import javax.servlet.ServletException;
@@ -10,17 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/supprimerevenement")
+@WebServlet("/supprimer")
 public class SupprimerEvenementServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse resp)
+            throws ServletException, IOException {
 
-        String Sevenement_id = request.getParameter("evenement_id");
+        String Sevenement_id = request.getParameter("ID");
+        System.out.println("SupprimerEvenementServlet : String ID " + Sevenement_id);
+
         int evenement_id = Integer.parseInt(Sevenement_id);
-        Evenement nouvelEvenement = new Evenement(evenement_id, null, null, null, null, null, null, null, null);
         EvenementManager.getInstance().supprimerEvenement(evenement_id);
         request.getSession().removeAttribute("evenement_id");
+
+        System.out.println("SupprimerEvenementServlet : Int ID " + evenement_id);
+
         resp.sendRedirect("evenements");
     }
 
