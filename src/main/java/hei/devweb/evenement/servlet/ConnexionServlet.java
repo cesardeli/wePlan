@@ -19,7 +19,7 @@ public class ConnexionServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/connexion.jsp"); //A faire
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/inscription2.jsp"); //A faire EN ATTENTE : connexion.jsp
         view.forward(request, response);
     }
 
