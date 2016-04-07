@@ -102,12 +102,13 @@ public class EvenementDaoImpl implements EvenementDao {
     public void modifierEvenement(Evenement evenement) {
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
-            PreparedStatement stmt = connection.prepareStatement("UPDATE  evenement SET evenement_nom=?, evenement_lieu=?, evenement_prive=?, evenement_description=? WHERE evenement_id=? ");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE  evenement SET evenement_nom=?, evenement_lieu=?, evenement_description=? WHERE evenement_id=? ");
+
             stmt.setString(1, evenement.getEvenement_nom());
             stmt.setString(2, evenement.getEvenement_lieu());
-            stmt.setBoolean(3, evenement.getEvenement_prive());
-            stmt.setString(4, evenement.getEvenement_description());
-            stmt.setInt(5, evenement.getEvenement_id());
+            stmt.setString(3, evenement.getEvenement_description());
+            stmt.setInt(4, evenement.getEvenement_id());
+
             stmt.executeUpdate();
             stmt.close();
             connection.close();
