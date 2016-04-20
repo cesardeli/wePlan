@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="input-field col s4 m2">
-                    <input type="checkbox" id="prive" name="evenement_prive" checked="checked"/>
+                    <input type="checkbox" id="prive" value="on" name="evenement_prive" checked="checked"/>
                     <label for="prive">Lieu privé</label>
                 </div>
             </div>
