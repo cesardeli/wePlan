@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="input-field col s4 m2">
-                    <input type="checkbox" id="prive" name="evenement_prive" checked="checked"/>
+                    <input type="checkbox" id="prive" value="on" name="evenement_prive" checked="checked"/>
                     <label for="prive">Lieu privé</label>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
-                    <label for="debut">Date de début</label>
+                    <!-- <label for="debut">Date de début</label> -->
                     <input type="date" id="debut" name="evenement_date_debut" class="datepicker"/>
                 </div>
             </div>
@@ -132,8 +132,8 @@
 
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
-                    <label for="eventDate">Date</label>
-                    <input type="text" id="eventDate" class="datepicker"/>
+                    <!-- <label for="debut">Date de début</label> -->
+                    <input type="date" id="fin" name="evenement_date_fin" class="datepicker"/>
                 </div>
             </div>
 

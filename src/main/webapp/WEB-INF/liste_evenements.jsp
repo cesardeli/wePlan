@@ -28,7 +28,9 @@
     </div>
 
 
-    <c:forEach var="evenements" items="${evenements}">
+    <c:forEach var="evenements" items="${evenements}" varStatus="pStatus">
+        <form:input path="evenements[${pStatus.index}].evenement_id"/>
+        <form:input path="evenements[${pStatus.index}].evenement_nom"/>
 
 
         <div class="card-panel white">
@@ -37,18 +39,41 @@
             <div class="row">
 
                 <div class="col">
-                    <a class="btn-floating green" onclick=""><i class="material-icons">mode_edit</i></a>
+                    <a href="modifier?id=${evenements.evenement_id}" class="btn-floating green modal-trigger"><i
+                            class="material-icons">mode_edit</i></a>
                 </div>
-                <form method="get" action="supprimer">
-                    <div class="col">
-                        <input type="hidden" name="ID" value="${evenements.evenement_id}">
-                        <button class="btn-floating red" type="submit"
-                                name="delete_event">
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </div>
-                </form>
+
+
+                <div class="col">
+                    <button type="button" class="modal-trigger btn-floating red" data-target="modalSupprimer"
+                            data-dismiss="modal" data-id="${evenements.evenement_id}"
+                            name="delete_event">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+
+
+                    <%--<form method="get" action="supprimer">
+                        <input "type="hidden" name="ID" value="${evenements.evenement_id}">
+
+                        <div class="col">
+                            <button type="button" class="modal-trigger btn-floating red" data-target="modalSupprimer" data-dismiss="modal" data-id="${evenements.evenement_id}"
+                                    name="delete_event">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </div>
+                    </form>--%>
             </div>
+
+
+            <!-- -----------TEST------------- -->
+
+            <p>Sans modal pour confirmer :</p>
+            <a href="supprimer?id=${evenements.evenement_id}">Supprimer</a>
+
+
+            <!-- ---------FIN TEST------------ -->
+
 
             <p>
                 ID : ${evenements.evenement_id},
@@ -68,21 +93,63 @@
                 Heure fin : ${evenements.evenement_heure_fin },
             </p>
 
-            <c:if test="${not evenement.evenement_prive}">Evenement prive Lieu : ${evenements.evenement_lieu }</c:if>
-
-
             <p>
-                Lieu : ${evenements.evenement_lieu }
 
-            <p>
+                <c:choose>
+                    <c:when test="${evenements.evenement_prive}">
+                        Lieu privé
+                    </c:when>
+                    <c:otherwise>
+                        Lieu : ${evenements.evenement_lieu}
+                    </c:otherwise>
+                </c:choose>
+
+            </p>
 
             <p>
                 Description: ${evenements.evenement_description}
             </p>
 
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modalSupprimer" class="modal modal-fixed-footer">
+            <input type="hidden" name="evenementId"/>
+
+            <div class="modal-content">
+                <h4 class="modal-title">Supprimer</h4>
+
+                <p>Voulez vous vraiment supprimer l'événement : ${evenements.evenement_nom}</p>
+            </div>
+
+
+            < class="modal-footer">
+
+            <a href="supprimer?id=${evenements.evenement_id}"
+               class="modal-action modal-close waves-effect waves-green btn-flat ">Oui</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">TEST</a>
+
+            <form method="get" action="supprimer">
+                <input "type="hidden" name="ID" value="${evenements.evenement_id}">
+
+
+                <a href="supprimer?id="
+                   class="modal-action modal-close waves-effect waves-green btn-flat ">Supprimer</a>
+
+                <a type="button" class="modal-trigger btn-floating red" data-target="modalSupprimer"
+                   data-dismiss="modal" data-id="${evenements.evenement_id}"
+                   name="delete_event">
+                    <i class="material-icons">delete</i>
+                </a>
+
+            </form>
+
 
         </div>
+
     </c:forEach>
+
+</div>
 
 
 </div>
