@@ -1,7 +1,5 @@
-package hei.devweb.evenement.servlet;
+/*package hei.devweb.evenement.servlet;
 
-
-import hei.devweb.evenement.managers.UtilisateurManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,3 +35,5 @@ public class ConnexionServlet extends HttpServlet {
 
 
 }
+
+*/
