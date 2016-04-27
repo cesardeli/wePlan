@@ -3,56 +3,35 @@ package hei.devweb.evenement.daos;
 import hei.devweb.evenement.entites.Utilisateur;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+/**
+ * Created by Constance on 20/04/2016.
+ */
 public class UtilisateurDaoImpl implements UtilisateurDao {
 
-    public Utilisateur getUtilisateur(Integer utilisateur_id) {
-
-        Utilisateur utilisateur1 = new Utilisateur((Integer) null, null, null);
-
+    /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
+    @Override
+    public void ajouterUtilisateur( Utilisateur utilisateur )  {
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
+            PreparedStatement stmt = connection.prepareStatement("INSERT INTO `utilisateur`(`utilisateur_mail`, `utilisateur_mdp`) VALUES(?, ?)");
 
-            Statement stmt = connection.createStatement();
-            ResultSet results = stmt.executeQuery("SELECT * FROM utilisateur WHERE");
-            while (results.next()) {
-                utilisateur1.setUtilisateur_id(results.getInt("utilisateur_id"));
-                utilisateur1.setUtilisateur_mail(results.getString("utilisateur_mail"));
-                utilisateur1.setUtilisateur_mdp(results.getString("utilisateur_mdp"));
-            }
+
+            stmt.setString(1, utilisateur.getUtilisateur_mail());
+            stmt.setString(2, utilisateur.getUtilisateur_mdp());
+
+            stmt.executeUpdate();
             stmt.close();
+
+
+            // Fermer la connexion
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return utilisateur1;
     }
 
-    public boolean verifierUtilisateur(String utilisateur_mail, String utilisateur_mdp) {
 
-        String motdepasseUtilisateur = "";
-
-        try {
-            Connection connection = DataSourceProvider.getDataSource().getConnection();
-
-            Statement stmt = connection.createStatement();
-            ResultSet results = stmt.executeQuery("SELECT utilisateur_mdp FROM utilisateur WHERE utilisateur_id = '" + utilisateur_mail + "'");
-            while (results.next()) {
-                motdepasseUtilisateur = results.getString("utilisateur_mdp");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if (motdepasseUtilisateur != "") {
-            if (motdepasseUtilisateur.equals(utilisateur_mdp)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

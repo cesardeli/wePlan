@@ -6,4 +6,15 @@
   	<welcome-file-list>
     	<welcome-file>accueil</welcome-file>
   	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>Inscription</servlet-name>
+		<servlet-class>hei.devweb.evenement.servlet.InscriptionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Inscription</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
 </web-app>
+

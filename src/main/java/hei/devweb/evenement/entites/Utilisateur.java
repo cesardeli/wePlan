@@ -2,12 +2,15 @@ package hei.devweb.evenement.entites;
 
 import java.io.Serializable;
 
-public class Utilisateur implements Serializable {
-	private static final long serialVersionUID = 1L;  
-     
-    private int utilisateur_id;
-    private String utilisateur_mail;
-    private String utilisateur_mdp;
+public class Utilisateur  {
+
+
+	private Integer utilisateur_id;
+	private String utilisateur_mail;
+	private String utilisateur_mdp;
+
+
+
 	public int getUtilisateur_id() {
 		return utilisateur_id;
 	}
@@ -26,7 +29,7 @@ public class Utilisateur implements Serializable {
 	public void setUtilisateur_mdp(String utilisateur_mdp) {
 		this.utilisateur_mdp = utilisateur_mdp;
 	}
-	public Utilisateur(int utilisateur_id, String utilisateur_mail, String utilisateur_mdp) {
+	public Utilisateur(Integer utilisateur_id, String utilisateur_mail, String utilisateur_mdp) {
 		super();
 		this.utilisateur_id = utilisateur_id;
 		this.utilisateur_mail = utilisateur_mail;
@@ -36,5 +39,8 @@ public class Utilisateur implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-    
+
 }
+
+
+
