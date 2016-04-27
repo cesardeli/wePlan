@@ -82,7 +82,7 @@
 
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
-                    <label for="debut">Date de début</label>
+                    <!-- <label for="debut">Date de début</label> -->
                     <input type="date" id="debut" name="evenement_date_debut" class="datepicker"/>
                 </div>
             </div>
@@ -132,8 +132,8 @@
 
             <div class="row">
                 <div class="input-field col offset-m2 s12 m8">
-                    <label for="eventDate">Date</label>
-                    <input type="text" id="eventDate" class="datepicker"/>
+                    <!-- <label for="debut">Date de début</label> -->
+                    <input type="date" id="fin" name="evenement_date_fin" class="datepicker"/>
                 </div>
             </div>
 

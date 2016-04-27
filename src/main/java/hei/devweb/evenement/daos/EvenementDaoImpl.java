@@ -76,17 +76,15 @@ public class EvenementDaoImpl implements EvenementDao {
 
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
-            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenement(evenement_nom, evenement_lieu, evenement_prive, /*`evenement_date_debut`, `evenement_date_fin`,*/ evenement_description) VALUES(?, ?, ?, /*?, ?,*/ ?)");
+            PreparedStatement stmt = connection.prepareStatement("INSERT INTO evenement(evenement_nom, evenement_lieu, evenement_prive, evenement_date_debut, evenement_date_fin, evenement_description) VALUES(?, ?, ?, ?, ?, ?)");
 
 
             stmt.setString(1, evenement.getEvenement_nom());
             stmt.setString(2, evenement.getEvenement_lieu());
-
             stmt.setBoolean(3, evenement.getEvenement_prive());
-
-           /* stmt.setDate(3, new Date(evenement.getEvenement_date_debut().getTime()));
-            stmt.setDate(4, new Date(evenement.getEvenement_date_fin().getTime()));*/
-            stmt.setString(4, evenement.getEvenement_description());
+            stmt.setDate(4, new Date(evenement.getEvenement_date_debut().getTime()));
+            stmt.setDate(5, new Date(evenement.getEvenement_date_fin().getTime()));
+            stmt.setString(6, evenement.getEvenement_description());
             stmt.executeUpdate();
             stmt.close();
 

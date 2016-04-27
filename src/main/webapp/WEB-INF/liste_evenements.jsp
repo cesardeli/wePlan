@@ -95,10 +95,6 @@
 
             <p>
 
-
-                    <%--<c:if test="${evenements.evenement_prive == '0'}">Lieu : ${evenements.evenement_lieu}</c:if>
-                    <c:if test="${evenements.evenement_prive == '1'}">Lieu privé.</c:if>
-    --%>
                 <c:choose>
                     <c:when test="${evenements.evenement_prive}">
                         Lieu privé
