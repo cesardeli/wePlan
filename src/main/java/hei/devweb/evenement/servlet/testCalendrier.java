@@ -12,10 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/evenements")
-public class ListeEvenementServlet extends HttpServlet {
+@WebServlet("/calendrier")
+public class testCalendrier extends HttpServlet {
 
-    private static final long serialVersionUID = 8762892363953511538L;
+    private static final long serialVersionUID = 6880801727716084460L;
+
+   /* @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //super.doGet(request, response);
+
+
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/testCalendrier.jsp"); //Faire JSP
+        view.forward(request, response);*/
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +33,10 @@ public class ListeEvenementServlet extends HttpServlet {
         List<Evenement> evenements = EvenementManager.getInstance().listerEvenements();
         request.setAttribute("evenements", evenements);
 
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/liste_evenements.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/testCalendrier.jsp");
         view.forward(request, response);
     }
+
+
 }
+

@@ -24,11 +24,9 @@ public class InscriptionServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String utilisateur_mail = request.getParameter("utilisateur_mail");
-       // String utilisateur_mdp = request.getParameter("utilisateur_mdp");
-        //String confirmation = request.getParameter("confirmation");
-        //String erreurs=request.getParameter("erreurs");
-        //String resultat=request.getParameter("resultat");
         String utilisateur_mdp = generate();
+        String erreurs=request.getParameter("erreurs");
+        //String resultat=request.getParameter("resultat");
 
         Utilisateur nouvelUtilisateur = new Utilisateur(null, utilisateur_mail, utilisateur_mdp);
         UtilisateurManager.getInstance().ajouterUtilisateur(nouvelUtilisateur);
@@ -37,51 +35,32 @@ public class InscriptionServlet extends HttpServlet {
 
         SendTextMessage envoyeurDeMail = new SendTextMessage();
 
-        try
-        {
-            String message="Yo gros,\n\n"
+        try {
+            String message = "Yo gros,\n\n"
                     + "Tu viens de t'inscrire sur WePlan.\n"
-                    + "Voici ton mot de passe généré aléatoirement: "+utilisateur_mdp +"\n\n"
+                    + "Voici ton mot de passe généré aléatoirement: " + utilisateur_mdp + "\n\n"
                     + "A bientôt sur WePlanHei!";
             envoyeurDeMail.envoyer_email("smtp.gmail.com", "465", "weplanhei@gmail.com",
                     utilisateur_mail, "Inscription pour aller voir les évènements",
                     message);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         response.sendRedirect("evenements");
 
     }
-    public String generate()
-    {
+
+    public String generate() {
         String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; // Tu supprimes les lettres dont tu ne veux pas
         String motdepass = "";
-        for(int x=0;x<8;x++)
-        {
-            int i = (int)Math.floor(Math.random() * 62); // Si tu supprimes des lettres tu diminues ce nb
+        for (int x = 0; x < 8; x++) {
+            int i = (int) Math.floor(Math.random() * 62); // Si tu supprimes des lettres tu diminues ce nb
             motdepass += chars.charAt(i);
         }
         System.out.println(motdepass);
         return motdepass;
     }
-
-    /*private void validationMotsdePasse(String utilisateur_mdp, String confirmation) throws Exception {
-            if (utilisateur_mdp != null && utilisateur_mdp.trim().length() != 0 && confirmation != null && confirmation.trim().length() != 0) {
-                if (!utilisateur_mdp.equals(confirmation)) {
-                    throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-                } else if (utilisateur_mdp.trim().length() < 3) {
-                    throw new Exception("Les mots de passe doivent contenir au moins 3 caractères.");
-                }
-            } else {
-                throw new Exception("Merci de saisir et confirmer votre mot de passe.");
-            }
-        }*/
-
-
-
 
 
     @Override
@@ -90,11 +69,6 @@ public class InscriptionServlet extends HttpServlet {
         view.forward(request, response);
 
     }
-
-
-
-
-
 
 
 }
