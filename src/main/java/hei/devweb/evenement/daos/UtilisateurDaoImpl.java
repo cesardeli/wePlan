@@ -108,7 +108,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 
 
     @Override
-    public void modifierPlanification(String utilisateur_mail) {
+    public void modifierDroit(String utilisateur_mail) {
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
             PreparedStatement stmt = connection.prepareStatement("UPDATE  utilisateur SET utilisateur_type=0 WHERE utilisateur_mail=? ");
@@ -123,14 +123,13 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
             e.printStackTrace();
         }
     }
-
 
 
     @Override
-    public void modifierCommission(String utilisateur_mail) {
+    public void ajouterPlanification(String utilisateur_mail) {
         try {
             Connection connection = DataSourceProvider.getDataSource().getConnection();
-            PreparedStatement stmt = connection.prepareStatement("UPDATE  utilisateur SET utilisateur_type=0 WHERE utilisateur_mail=? ");
+            PreparedStatement stmt = connection.prepareStatement("UPDATE  utilisateur SET utilisateur_type=2 WHERE utilisateur_mail=? ");
 
             stmt.setString(1, utilisateur_mail);
 
@@ -142,6 +141,24 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void ajouterCommission(String utilisateur_mail) {
+        try {
+            Connection connection = DataSourceProvider.getDataSource().getConnection();
+            PreparedStatement stmt = connection.prepareStatement("UPDATE  utilisateur SET utilisateur_type=1 WHERE utilisateur_mail=? ");
+
+            stmt.setString(1, utilisateur_mail);
+
+
+            stmt.executeUpdate();
+            stmt.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

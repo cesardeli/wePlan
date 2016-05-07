@@ -15,9 +15,14 @@ public interface UtilisateurDao  {
 
     public List<Utilisateur> listerCommission();
 
-    public void modifierPlanification(String utilisateur_mail);
+    public void modifierDroit(String utilisateur_mail);
 
-    public void modifierCommission(String utilisateur_mail);
+    public void ajouterPlanification(String utilisateur_mail);
+
+    public void ajouterCommission(String utilisateur_mail);
+
+
+
 
 
 

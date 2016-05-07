@@ -31,7 +31,7 @@ public class ModifierDroitServlet extends HttpServlet {
         String utilisateur_mail = request.getParameter("id");
 
 
-        UtilisateurManager.getInstance().modifierCommission(utilisateur_mail);
+        UtilisateurManager.getInstance().modifierDroit(utilisateur_mail);
         request.getSession().removeAttribute("evenement_id");
 
         System.out.println("ModifierDroitServlet : mail " + utilisateur_mail);
