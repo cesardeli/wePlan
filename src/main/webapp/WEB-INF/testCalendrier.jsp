@@ -47,8 +47,8 @@
         </div>
     </div>
 
-
-    <%@ include file="footer.jsp" %>
+        <%=session.getId()%>
+<%@ include file="footer.jsp" %>
 
 </body>
 </html>

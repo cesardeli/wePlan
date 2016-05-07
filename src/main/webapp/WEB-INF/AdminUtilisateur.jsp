@@ -19,24 +19,31 @@
                     class="material-icons right">more_vert</i></span>
 
             <div class="row">
-                <form class="col s12">
+                <form class="col s12"  method="post" name="connexion">
                     <h3 class="center blue-text" style="font-weight: 300;">
                         Connexion
                     </h3>
 
                     <div class="row">
                         <div class="input-field col offset-m2 s12 m8">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" type="email" class="validate" name="utilisateur_mail_connexion">
                             <label for="email">Adresse email @hei.fr</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col offset-m2 s12 m8">
-                            <input id="password" type="password" class="validate">
+                            <input id="password" type="password" class="validate" name="utilisateur_mdp">
                             <label for="password">Mot de passe</label>
                         </div>
                     </div>
-                    <a class="waves-effect waves-light btn">Connexion</a>
+
+                    <button class="row waves-effect waves-light btn" type="submit" value="connexion" name="bouton" >Connexion
+                    </button>
+                  <%-- &lt;%&ndash; <c:if test="${!empty sessionScope.sessionUtilisateur}">
+                        &lt;%&ndash; Si l'utilisateur existe en session, alors on affiche son adresse email. &ndash;%&gt;
+                        <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.utilisateur_mail}</p>
+                    </c:if&ndash;%&gt;>
+--%>
 
                 </form>
             </div>
@@ -47,38 +54,26 @@
                     class="material-icons right">close</i></span>
 
             <div class="row">
-                <form class="col s12" action="inscription" method="post">
+                <form class="col s12"  method="post" name="inscription">
                     <h3 class="center blue-text" style="font-weight: 300;">
                         Inscription
                     </h3>
 
                     <div class="row">
                         <div class="input-field col offset-m2 s12 m8">
-                            <input id="email" type="email" class="validate" name="utilisateur_mail" value="<c:out value="${param.utilisateur_mail}"/>">
+                            <input id="email" type="email" class="validate" name="utilisateur_mail_inscription"/>
                             <label for="email"> Adresse mail @hei.fr <span class="requis">*</span></label>
-                            <span class="erreur">${erreurs['utilisateur_mail']}</span>
+
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="input-field col offset-m2 s12 m8">
-                            <input id="password" type="password" class="validate" name="utilisateur_mdp" value="">
-                            <label for="password">Mot de passe <span class="requis">*</span></label>
-                            <span class="erreur">${erreurs['utilisateur_mdp']}</span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="input-field col offset-m2 s12 m8">
-                            <input id="password" type="password" class="validate" name="confirmation" value="">
-                            <label for="password">Confirmation  <span class="requis">*</span></label>
-                            <span class="erreur">${erreurs['confirmation']}</span>
-                        </div>
-                    </div>
-                    <button class="row waves-effect waves-light btn" type="submit" value="inscription" name="inscription">Incription
+
+
+                    <button class="row waves-effect waves-light btn" type="submit"  value="inscription" name="bouton" >Incription
                     </button>
 
-                    <p class="${empty erreurs ? 'succes' : 'erreur'}">${resultat}</p>
+
 
                 </form>
 
