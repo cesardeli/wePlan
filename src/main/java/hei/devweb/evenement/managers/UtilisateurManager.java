@@ -30,22 +30,32 @@ public class UtilisateurManager {
 
     }
 
-    public void modifierPlanification(String utilisateur_mail) {
+    public void modifierDroit(String utilisateur_mail) {
 
         // TODO Auto-generated method stub
-        System.out.println("UtilisateurManager : modifierPlanification " + utilisateur_mail);
+        System.out.println("UtilisateurManager : modifierDroit " + utilisateur_mail);
 
-        UtilisateurDao.modifierPlanification(utilisateur_mail);
+        UtilisateurDao.modifierDroit(utilisateur_mail);
+    }
+
+    public void ajouterPlanification(String utilisateur_mail) {
+
+        // TODO Auto-generated method stub
+        System.out.println("UtilisateurManager : ajouterPlannification " + utilisateur_mail);
+
+        UtilisateurDao.ajouterPlanification(utilisateur_mail);
+    }
+
+    public void ajouterCommission(String utilisateur_mail) {
+
+        // TODO Auto-generated method stub
+        System.out.println("UtilisateurManager : AjouterCommissionServlet " + utilisateur_mail);
+
+        UtilisateurDao.ajouterCommission(utilisateur_mail);
     }
 
 
-    public void modifierCommission(String utilisateur_mail) {
 
-        // TODO Auto-generated method stub
-        System.out.println("UtilisateurManager : modifierCommission " + utilisateur_mail);
-
-        UtilisateurDao.modifierPlanification(utilisateur_mail);
-    }
 
 
     public void ajouterUtilisateur(Utilisateur nouvelUtilisateur) {
