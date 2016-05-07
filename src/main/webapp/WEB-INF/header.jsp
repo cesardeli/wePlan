@@ -12,10 +12,6 @@
     <!--Import fullcalendar.css-->
     <link rel='stylesheet' href='CSS/fullcalendar.css'/>
     <!--Import materialize.css-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"
-          rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" type="text/css"
-          rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="CSS/materialize.css"/>
     <link type="text/css" rel="stylesheet" href="CSS/surcouche.css"/>
 
@@ -24,32 +20,36 @@
     <script src='js/moment.min.js'></script>
     <script src='js/jquery.min.js'></script>
     <script src='js/fullcalendar.js'></script>
+    <script src='js/materialize.js'></script>
     <script type="text/javascript" src="js/qtip-1.0.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src='js/lang-all.js'></script>
 
 
     <script>
         $(document).ready(function () {
 
+
+            $(".dropdown-button").dropdown();
+
+            //Paramètres du Modal
+            $('.modal-trigger').leanModal({
+                dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                in_duration: 300, // Transition in duration
+                out_duration: 200 // Transition out duration
+
+            });
+
+
             $('#calendar').fullCalendar({
-
-                /*eventClick: function (event, jsEvent, view) {
-                    $('#modalTitle').html(event.title), event.lieu;
-                    $('#modalBody').html(event.lieu);
-                    $('#modalBody').html(event.description);
-                    $('#fullCalModal').modal();
-                    return false;
-                },*/
-
                 height: '350',
-
                 default: false,
                 editable: false,
                 lang: 'fr',
                 defaultView: 'agendaWeek',
                 color: 'grey lighten-4',     // an option!
 
+                //Mise en forme du header
                 header: {
                     prev: 'circle-triangle-w',
                     next: 'circle-triangle-e',
@@ -58,7 +58,7 @@
                     right: 'agendaWeek,agendaDay',
                 },
 
-
+                //Déclaration de la liste d'événements
                 events: [
                     <c:forEach var="evenements" items="${evenements}" varStatus="pStatus">
                     {
@@ -66,26 +66,29 @@
                         start: '${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z',
                         end: '${evenements.evenement_date_fin}T${evenements.evenement_heure_fin}Z',
                         <c:choose>
-                            <c:when test="${evenements.evenement_prive}">
-                                lieu: 'privé',
-                            </c:when>
-                            <c:otherwise>
-                                lieu: '${evenements.evenement_lieu}',
-                            </c:otherwise>
+                        <c:when test="${evenements.evenement_prive}">
+                        lieu: 'privé',
+                        </c:when>
+                        <c:otherwise>
+                        lieu: '${evenements.evenement_lieu}',
+                        </c:otherwise>
                         </c:choose>
                         description: '${evenements.evenement_description}',
-//                        url:'http://google.com',
+                        //url:'http://google.com',
                     },
                     </c:forEach>
                 ],
 
+                //Ouverture modal après clic
                 eventClick: function (event) {
-                    $('#modalTitle').html(event.title);
+                    console.log("eventClick: function (event)"),
+                            $('#modalTitle').html(event.title);
                     $('#modalBody').html('Lieu : ' + event.lieu + '<br/><br/> Description : ' + event.description);
                     $('#eventUrl').attr('href', event.url);
-                    $('#fullCalModal').modal();
+                    $('#modal1').openModal();
                 },
 
+                //Ajouter lieu sur l'événement
                 eventRender: function (event, element, view) {
                     element.find('.fc-title').append("<br/>" + event.lieu);
                 }

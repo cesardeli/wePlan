@@ -64,10 +64,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
 }
 
-.modal {
+/*.modal {
     background-color: transparent;
     box-shadow: none;
-}
+}*/
 
 .fc-event {
     border:#1F8585;

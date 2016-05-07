@@ -17,15 +17,6 @@ public class testCalendrier extends HttpServlet {
 
     private static final long serialVersionUID = 6880801727716084460L;
 
-   /* @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //super.doGet(request, response);
-
-
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/testCalendrier.jsp"); //Faire JSP
-        view.forward(request, response);*/
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

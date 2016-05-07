@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <ul id="Dropdown1" class="dropdown-content">
+    <li style="height: 64px;"><a style="height: 64px;" href="dashboard"> Dashboard</a></li>
     <li style="height: 64px;"><a style="height: 64px;" href=""> Paramètres</a></li>
     <li style="height: 64px;"><a style="height: 64px;" href=""> Deconnexion</a></li>
 </ul>

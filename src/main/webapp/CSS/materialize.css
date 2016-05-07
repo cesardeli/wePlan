@@ -2643,7 +2643,7 @@ ul li {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.z-depth-4, {
+.z-depth-4, .modal {
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
@@ -8405,7 +8405,7 @@ a.waves-effect .waves-ripple {
   position: fixed;
   left: 0;
   right: 0;
-  background-color: transparent;
+  background-color: #fafafa;
   padding: 0;
   max-height: 70%;
   width: 55%;

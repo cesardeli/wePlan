@@ -28,7 +28,7 @@ public class InscriptionServlet extends HttpServlet {
         String erreurs=request.getParameter("erreurs");
         //String resultat=request.getParameter("resultat");
 
-        Utilisateur nouvelUtilisateur = new Utilisateur(null, utilisateur_mail, utilisateur_mdp);
+        Utilisateur nouvelUtilisateur = new Utilisateur(null, utilisateur_mail, utilisateur_mdp, 0);
         UtilisateurManager.getInstance().ajouterUtilisateur(nouvelUtilisateur);
 
         System.out.println("Utilisateur : " + nouvelUtilisateur);

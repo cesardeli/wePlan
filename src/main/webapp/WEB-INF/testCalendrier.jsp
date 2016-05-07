@@ -27,26 +27,28 @@
 
     </div>
 
-</div>
-<div id="fullCalModal" class="modal fade">
-    <div class="modal-dialog">
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span
-                        class="sr-only">close</span></button>
-                <h4 id="modalTitle" class="modal-title"></h4>
-            </div>
-            <div id="modalBody" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                <a class="btn btn-primary" id="eventUrl" target="_blank">Page événement</a>
+            <h4 id="modalTitle" class="modalTitle"></h4>
+
+            <p id="modalBody" class="modal-body"></p>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col offset-m3 s6 m3">
+                    <a class="blue btn waves-effect waves-light" id="eventUrl" target="_blank">Page événement</a>
+                </div>
+                <div class="col s6 m3">
+                    <a href="#!" class="red btn waves-effect waves-light">Fermer</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<%@ include file="footer.jsp" %>
+    <%@ include file="footer.jsp" %>
 
 </body>
 </html>
