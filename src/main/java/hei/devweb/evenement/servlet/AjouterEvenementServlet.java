@@ -36,11 +36,9 @@ public class AjouterEvenementServlet extends HttpServlet {
         String Sevenement_date_fin = request.getParameter("evenement_date_fin");
 
 
-
-
         System.out.println(Sevenement_date_debut);
 
-        String inputPattern = "dd-MM-yyyy";
+   /*     String inputPattern = "yyyy-MM-dd";
         String outputPattern = "dd MMMM yyyy";
 
         SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern);
@@ -50,13 +48,15 @@ public class AjouterEvenementServlet extends HttpServlet {
         String str = null;
 
         try {
-            date = inputFormat.parse(Sevenement_date_debut);
-            str = outputFormat.format(date);
+            str = inputFormat.format(Sevenement_date_debut);
+            date = outputFormat.parse(str);
 
-            //Log.i("mini", "Converted Date Today:" + str);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        System.out.println("Test inputFormat : " +date);
+*/
 
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
 

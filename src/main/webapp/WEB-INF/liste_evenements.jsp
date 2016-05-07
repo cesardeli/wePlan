@@ -6,6 +6,9 @@
 <%@ include file="header.jsp" %>
 
 
+
+
+
 <body class="grey lighten-4">
 
 <%@include file="menu.jsp" %>
@@ -26,6 +29,15 @@
             </p>
         </div>
     </div>
+
+
+    <?-- --------------- TEST CALENDRIER --------------- -->
+
+
+    <div id='calendar'></div>
+
+    <?-- --------------- FIN TEST CALENDRIER --------------- -->
+
 
 
     <c:forEach var="evenements" items="${evenements}" varStatus="pStatus">
@@ -149,7 +161,9 @@
 
     </c:forEach>
 
-</div>
+
+
+
 
 
 </div>

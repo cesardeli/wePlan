@@ -18,7 +18,7 @@ public class EvenementDaoImpl implements EvenementDao {
 
             // Utiliser la connexion
             Statement stmt = connection.createStatement();
-            ResultSet results = stmt.executeQuery("SELECT * FROM evenement");
+            ResultSet results = stmt.executeQuery("SELECT * FROM evenement ORDER BY evenement_date_debut");
             while (results.next()) {
 
                 listeEvenements.add(new Evenement(

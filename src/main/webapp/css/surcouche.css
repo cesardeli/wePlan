@@ -7,12 +7,12 @@
     color: #dd3333 !important;
 }
 
-.blue{
+.blue {
     background: #1F8585 !important;
 
 }
 
-.blue-text{
+.blue-text {
     color: #1F8585 !important;
 }
 
@@ -25,6 +25,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     border-right: 2px solid #1F8585;
     border-bottom: 2px solid #1F8585;
 }
+
 .dropdown-content li > a, .dropdown-content li > span {
     color: #1F8585;
 }
@@ -41,26 +42,41 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     min-height: 300px;
 }
 
-
-.card.header .card-title{
-    width:100%;
-    text-align:center;
-    bottom:30px;
+.card.header .card-title {
+    width: 100%;
+    text-align: center;
+    bottom: 30px;
 }
 
 .card.header .card-title h1 {
-    font-size:6rem;
+    font-size: 6rem;
     margin-bottom: 0;
 }
 
 .card.header .card-title h5 {
-    margin-top:0;
-    font-weight:300;
+    margin-top: 0;
+    font-weight: 300;
 }
-
 
 @media only screen and (max-width: 600px) {
     .card.header.small {
-        height:200px !important;
+        height: 200px !important;
     }
 }
+
+/*.modal {
+    background-color: transparent;
+    box-shadow: none;
+}*/
+
+.fc-event {
+    border:#1F8585;
+    background-color: #1F8585;
+
+}
+
+.fc-today {
+    background-color: red;
+}
+
+

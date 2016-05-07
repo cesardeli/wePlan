@@ -21,14 +21,14 @@ public class UtilisateurDaoTestCase {
         Connection connection = DataSourceProvider.getDataSource().getConnection();
         Statement stmt = connection.createStatement();
         stmt.executeUpdate("DELETE FROM utilisateur");
-        stmt.executeUpdate("INSERT INTO `utilisateur`(utilisateur_id,utilisateur_mail,utilisateur_mdp) VALUES (1,'constance.salle@hei.fr','azerty')");
-        stmt.executeUpdate("INSERT INTO `utilisateur`(utilisateur_id,utilisateur_mail,utilisateur_mdp) VALUES (2,'cesar.deligny@hei.fr','azerty2')");        stmt.close();
+        stmt.executeUpdate("INSERT INTO `utilisateur`(utilisateur_id,utilisateur_mail,utilisateur_mdp) VALUES (1,'constance.salle@hei.fr','azerty', 0)");
+        stmt.executeUpdate("INSERT INTO `utilisateur`(utilisateur_id,utilisateur_mail,utilisateur_mdp) VALUES (2,'cesar.deligny@hei.fr','azerty2', 0)");        stmt.close();
         connection.close();
     }
 
     @Test
     public void testerAjouterUtilisateur() throws Exception {
-        Utilisateur utilisateur1 = new Utilisateur(null,"adresse@hei.fr", "azertyu");
+        Utilisateur utilisateur1 = new Utilisateur(null,"adresse@hei.fr", "azertyu", 0);
         utilisateurDao.ajouterUtilisateur(utilisateur1);
 
         Connection connection = DataSourceProvider.getDataSource().getConnection();
