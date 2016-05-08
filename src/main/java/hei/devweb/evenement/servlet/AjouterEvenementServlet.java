@@ -30,6 +30,8 @@ public class AjouterEvenementServlet extends HttpServlet {
         String evenement_lieu = request.getParameter("evenement_lieu");
         boolean evenement_prive = request.getParameter("evenement_prive") != null;
         String evenement_description = request.getParameter("evenement_description");
+        String evenement_link = request.getParameter("evenement_link");
+
 
 
         String Sevenement_date_debut = request.getParameter("evenement_date_debut");
@@ -94,7 +96,7 @@ public class AjouterEvenementServlet extends HttpServlet {
         //System.out.println("Heure début : " +evenement_heure_debut);
 
 
-        Evenement nouvelEvenement = new Evenement(null, evenement_nom, evenement_lieu, evenement_prive, evenement_date_debut, null, evenement_date_fin, null, evenement_description);
+        Evenement nouvelEvenement = new Evenement(null, evenement_nom, evenement_lieu, evenement_prive, evenement_date_debut, null, evenement_date_fin, null, evenement_description, evenement_link);
         EvenementManager.getInstance().ajouterEvenement(nouvelEvenement);
 
         System.out.println("Evenement : " + nouvelEvenement);

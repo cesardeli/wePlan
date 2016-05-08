@@ -51,6 +51,7 @@ public class ModifierEvenementServlet extends HttpServlet {
         //Date evenement_date_fin;
         //Time evenement_heure_fin;
         String evenement_description = request.getParameter("evenement_description");
+        String evenement_link = request.getParameter("evenement_link");
 
 
         System.out.println("ModifierEvenementServlet");
@@ -59,7 +60,7 @@ public class ModifierEvenementServlet extends HttpServlet {
         System.out.println("Description : " + evenement_description);
 
 
-        Evenement newEvenement = new Evenement(79, evenement_nom, evenement_lieu, null, null, null, null, null, evenement_description);
+        Evenement newEvenement = new Evenement(79, evenement_nom, evenement_lieu, null, null, null, null, null, evenement_description, evenement_link);
         EvenementManager.getInstance().modifierEvenement(newEvenement);
         System.out.println("Retour ModifierEvenementServlet");
 

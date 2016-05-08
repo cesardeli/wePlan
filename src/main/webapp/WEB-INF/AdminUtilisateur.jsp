@@ -13,14 +13,16 @@
 <div class="container">
 
     <div class="card">
+        <%=session.getId()%>
+
 
         <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Vous n'avez pas encore de compte? Cliquez ici pour vous inscrire!<i
+            <span class="card-title activator grey-text text-darken-4 flow-text">Vous n'avez pas encore de compte? Cliquez ici pour vous inscrire!<i
                     class="material-icons right">more_vert</i></span>
 
             <div class="row">
-                <form class="col s12"  method="post" name="connexion">
-                    <h3 class="center blue-text" style="font-weight: 300;">
+                <form class="col s12" method="post" name="connexion">
+                    <h3 class="center blue-text flow-text" style="font-weight: 300;">
                         Connexion
                     </h3>
 
@@ -37,13 +39,16 @@
                         </div>
                     </div>
 
-                    <button class="row waves-effect waves-light btn" type="submit" value="connexion" name="bouton" >Connexion
-                    </button>
-                  <%-- &lt;%&ndash; <c:if test="${!empty sessionScope.sessionUtilisateur}">
-                        &lt;%&ndash; Si l'utilisateur existe en session, alors on affiche son adresse email. &ndash;%&gt;
-                        <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.utilisateur_mail}</p>
-                    </c:if&ndash;%&gt;>
---%>
+                    <div class="row">
+                        <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2" type="submit" value="connexion"
+                                name="bouton">Connexion
+                        </button>
+                    </div>
+                    <%-- &lt;%&ndash; <c:if test="${!empty sessionScope.sessionUtilisateur}">
+                          &lt;%&ndash; Si l'utilisateur existe en session, alors on affiche son adresse email. &ndash;%&gt;
+                          <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.utilisateur_mail}</p>
+                      </c:if&ndash;%&gt;>
+  --%>
 
                 </form>
             </div>
@@ -54,7 +59,7 @@
                     class="material-icons right">close</i></span>
 
             <div class="row">
-                <form class="col s12"  method="post" name="inscription">
+                <form class="col s12" method="post" name="inscription">
                     <h3 class="center blue-text" style="font-weight: 300;">
                         Inscription
                     </h3>
@@ -68,11 +73,11 @@
                     </div>
 
 
-
-
-                    <button class="row waves-effect waves-light btn" type="submit"  value="inscription" name="bouton" >Incription
-                    </button>
-
+                    <div class="row">
+                        <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2" type="submit" value="inscription"
+                                name="bouton">Incription
+                        </button>
+                    </div>
 
 
                 </form>

@@ -14,11 +14,13 @@ public class Evenement {
     private Date evenement_date_fin;
     private Time evenement_heure_fin;
     private String evenement_description;
+    private String evenement_link;
+
 
 
     public Evenement(Integer evenement_id, String evenement_nom, String evenement_lieu, Boolean evenement_prive,
                      Date evenement_date_debut, Time evenement_heure_debut, Date evenement_date_fin, Time evenement_heure_fin,
-                     String evenement_description) {
+                     String evenement_description, String evenement_link) {
         super();
         this.evenement_id = evenement_id;
         this.evenement_nom = evenement_nom;
@@ -29,6 +31,7 @@ public class Evenement {
         this.evenement_date_fin = evenement_date_fin;
         this.evenement_heure_fin = evenement_heure_fin;
         this.evenement_description = evenement_description;
+        this.evenement_link = evenement_link;
     }
 
 
@@ -120,5 +123,16 @@ public class Evenement {
     public void setEvenement_description(String evenement_description) {
         this.evenement_description = evenement_description;
     }
+
+    public String getEvenement_link() {
+        return evenement_link;
+    }
+
+
+    public void setEvenement_link(String evenement_link) {
+        this.evenement_link = evenement_link;
+    }
+
+
 
 }

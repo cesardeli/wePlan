@@ -30,7 +30,8 @@ public class EvenementDaoImpl implements EvenementDao {
                                 results.getTime("evenement_heure_debut"),
                                 results.getDate("evenement_date_fin"),
                                 results.getTime("evenement_heure_fin"),
-                                results.getString("evenement_description")
+                                results.getString("evenement_description"),
+                                results.getString("evenement_link")
                         )
                 );
             }

@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by Constance on 07/05/2016.
  */
 
-@WebServlet("/ConfirmationInscription")
+@WebServlet("/confirmationinscription")
 public class ConfirmationInscriptionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

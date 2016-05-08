@@ -10,13 +10,23 @@
 
 <%@ include file="menu.jsp" %>
 
-<p>Un email de confirmation vous a été envoyé. Il contient votre mot de passe.</p>
+<div class="container">
 
-<p>Pour retourner à l'espace connexion cliquez ici : <button class="row waves-effect waves-light btn" type="submit"  value="redirection" name="bouton" >Par ici la connexion
-</button></p>
+    <div class="card-panel white">
+        <p>Un email de confirmation vous a été envoyé, il contient votre mot de passe.</p>
+
+        <div class="row">
+            <a href="/">
+                <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2">Connexion!</button>
+            </a>
+        </div>
+    </div>
+
+</div>
 
 <%@ include file="footer.jsp" %>
 
 </body>
+
 
 </html>

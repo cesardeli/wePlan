@@ -1,82 +1,107 @@
-//$(document).ready(function () {
-
-
-$('.datepicker').pickadate({
-    selectMonths: true,//Creates a dropdown to control month
-    selectYears: 2,//Creates a dropdown of 15 years to control year
-//The title label to use for the month nav buttons
-    labelMonthNext: 'Próximo Mês',
-    labelMonthPrev: 'Mês Anterior',
-//The title label to use for the dropdown selectors
-    labelMonthSelect: 'Selecione o Mês',
-    labelYearSelect: 'Selecione o ano',
-//Months and weekdays
-    monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-    monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-    weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-    weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-//Materialize modified
-    weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-//Today and clear
-    today: 'Hoje',
-    clear: 'Limpar',
-    close: 'Fechar',
-//The format to show on the `input` element
-    format: 'd mmmm yyyy'
-});
-//Copy settings and initialization tooltipped
 $(document).ready(function () {
 
-    new Clipboard('.copy-text');
 
-    $('.tooltipped').tooltip({delay: 50});
+    $(".dropdown-button").dropdown();
 
-});
-
-
-//});
-
-
-$(document).ready(function () {
-    $('select').material_select();
-
-});
-
-$(document).ready(function () {
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    //Paramètres du Modal
     $('.modal-trigger').leanModal({
-            dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            opacity: .5, // Opacity of modal background
-            in_duration: 300, // Transition in duration
-            out_duration: 200, // Transition out duration
-        / ! * ready
-    :
-    function () {
-        alert('Ready');
-    }
+        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        in_duration: 300, // Transition in duration
+        out_duration: 200 // Transition out duration
 
-    , // Callback for Modal open
-    complete: function () {
-        alert('Closed');
-    } // Callback for Modal close*!/
-})
-
-$(".announce").click(function () { // Click to only happen on announce links
-    $("#evenementId").val($(this).data('id'));
-    $('#modalSupprimer').modal('show');
-});
+    });
 
 
+    $('#calendar').fullCalendar({
+        height: '350',
+        default: false,
+        editable: false,
+        lang: 'fr',
+        defaultView: 'agendaWeek',
+        color: 'grey lighten-4',     // an option!
+
+        //Mise en forme du header
+        header: {
+            prev: 'circle-triangle-w',
+            next: 'circle-triangle-e',
+            left: 'prev,next today',
+            center: 'title',
+            right: 'agendaWeek,agendaDay',
+        },
+
+        /*       //Déclaration de la liste d'événements
+         events: [
+         < c
+         :
+         forEach
+         var =
+         "evenements"
+         items = "${evenements}"
+         varStatus = "pStatus" >
+         {
+         title: '${evenements.evenement_nom}',
+         start: '${evenements.evenement_date_debut}T${evenements.evenement_heure_debut}Z',
+         end: '${evenements.evenement_date_fin}T${evenements.evenement_heure_fin}Z',
+         < c
+         :
+         choose >
+         < c
+         :
+         when
+         test = "${evenements.evenement_prive}" >
+         lieu
+         :
+         'privé',
+         </
+         c:when >
+         < c
+         :
+         otherwise >
+         lieu
+         :
+         '${evenements.evenement_lieu}',
+         </
+         c:otherwise >
+         < / c
+         :
+         choose >
+         description
+         :
+         '${evenements.evenement_description}',
+         //url:'http://google.com',
+         },
+         < / c
+         :
+         forEach >
+         ],*/
+
+//Ouverture modal après clic
+        eventClick: function (event) {
+            console.log("eventClick: function (event)"),
+                $('#modalTitle').html(event.title);
+            $('#modalBody').html('Lieu : ' + event.lieu + '<br/><br/> Description : ' + event.description);
+            $('#eventUrl').attr('href', event.url);
+            $('#modal1').openModal();
+        }
+
+        ,
+
+//Ajouter lieu sur l'événement
+        eventRender: function (event, element, view) {
+            element.find('.fc-title').append("<br/>" + event.lieu);
+        }
+    })
+    ;
 })
 ;
 
-$('#modalSupprimer').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('whatever') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('.modal-title').text('New message to ' + recipient)
-    modal.find('.modal-body input').val(recipient)
-});
 
+evenements.forEach(function (evenement) {
+    console.log(evenement);
+    {
+        title: evenement.evenement_nom;
+        start: evenement.evenement_date_debutTevenement.evenement_heure_debutZ;
+        end: evenement.evenement_date_finTevenement.evenement_heure_finZ;
+    }
+});

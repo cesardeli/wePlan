@@ -22,6 +22,8 @@ public class testCalendrier extends HttpServlet {
             throws ServletException, IOException {
 
         List<Evenement> evenements = EvenementManager.getInstance().listerEvenements();
+
+
         request.setAttribute("evenements", evenements);
 
         RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/testCalendrier.jsp");

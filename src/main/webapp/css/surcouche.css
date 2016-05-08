@@ -64,10 +64,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
 }
 
-/*.modal {
-    background-color: transparent;
-    box-shadow: none;
-}*/
+.modal.modal-fixed-footer{
+    max-height: 50%;
+    height: 50%;
+}
 
 .fc-event {
     border:#1F8585;
@@ -77,6 +77,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
 .fc-today {
     background-color: red;
+}
+
+a.fc-event {
+    cursor: pointer;
 }
 
 

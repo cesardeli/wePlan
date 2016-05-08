@@ -53,7 +53,7 @@ public class EvenementDaoTestCase {
 
     @Test
     public void testerAjouterEvenement() throws Exception {
-        Evenement evenement3 = new Evenement(null, "nom3", "lieu3", false, new Date(2016 - 03 - 13), null, new Date(2016 - 03 - 14), null, "description3");
+        Evenement evenement3 = new Evenement(null, "nom3", "lieu3", false, new Date(2016 - 03 - 13), null, new Date(2016 - 03 - 14), null, "description3",null);
         evenementDao.ajouterEvenement(evenement3);
 
         Connection connection = DataSourceProvider.getDataSource().getConnection();
@@ -77,7 +77,7 @@ public class EvenementDaoTestCase {
 
     @Test
     public void testerModifierEvenement() throws Exception {
-        Evenement evenement4 = new Evenement(2, "nom4", "lieu4", true, null, null, null, null, "description4");
+        Evenement evenement4 = new Evenement(2, "nom4", "lieu4", true, null, null, null, null, "description4", null);
         evenementDao.modifierEvenement(evenement4);
         Connection connection = DataSourceProvider.getDataSource().getConnection();
         Statement stmt = connection.createStatement();
