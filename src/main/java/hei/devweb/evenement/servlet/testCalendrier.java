@@ -26,7 +26,7 @@ public class testCalendrier extends HttpServlet {
 
         request.setAttribute("evenements", evenements);
 
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/testCalendrier.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/testCalendrier.jsp");
         view.forward(request, response);
     }
 

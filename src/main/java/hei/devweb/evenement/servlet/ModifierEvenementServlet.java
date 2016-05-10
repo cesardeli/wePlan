@@ -69,7 +69,7 @@ public class ModifierEvenementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/modifier.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/modifier.jsp");
         view.forward(request, response);
 
     }

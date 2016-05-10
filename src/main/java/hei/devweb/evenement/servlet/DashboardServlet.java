@@ -31,7 +31,7 @@ public class DashboardServlet extends HttpServlet {
         List<Utilisateur> commissions = UtilisateurManager.getInstance().listerCommission();
         request.setAttribute("commissions", commissions);
 
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/dashboard.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/dashboard.jsp");
         view.forward(request, response);
     }
 

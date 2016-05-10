@@ -107,7 +107,7 @@ public class AjouterEvenementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/ajouter.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/ajouter.jsp");
         view.forward(request, response);
 
     }

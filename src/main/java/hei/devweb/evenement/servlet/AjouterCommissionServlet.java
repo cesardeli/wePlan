@@ -34,7 +34,7 @@ public class AjouterCommissionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/dashboard.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/dashboard.jsp");
         view.forward(request, response);
 
     }
