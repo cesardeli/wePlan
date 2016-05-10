@@ -58,12 +58,13 @@ public class UtilisateurManager {
     public void ajouterUtilisateur(Utilisateur nouvelUtilisateur) {
         // TODO Auto-generated method stub
         System.out.println("Dans Méthode : ajouterUtilisateur");
-        /*
-        if (nouvelEvenement == null) {
-			throw new IllegalArgumentException("L'évenement à ajouter ne peut pas être null.");
-		}
-		*/
         UtilisateurDao.ajouterUtilisateur(nouvelUtilisateur);
+    }
+
+    public void mdpoublie(Utilisateur nouvelUtilisateur) {
+        // TODO Auto-generated method stub
+        System.out.println("Dans Méthode : ajouterUtilisateur");
+        UtilisateurDao.mdpoublie(nouvelUtilisateur);
     }
 
     public void modifierMDP(String utilisateur_mail, String utilisateur_mdp) {

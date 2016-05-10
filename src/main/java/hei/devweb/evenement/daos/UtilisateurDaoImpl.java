@@ -186,4 +186,26 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
     }
 
 
+    @Override
+    public void mdpoublie(Utilisateur utilisateur) {
+        try {
+            Connection connection = DataSourceProvider.getDataSource().getConnection();
+            PreparedStatement stmt = connection.prepareStatement("UPDATE utilisateur SET utilisateur_mdp=? WHERE utilisateur_mail =?");
+
+
+            stmt.setString(1, utilisateur.getUtilisateur_mdp());
+            stmt.setString(2, utilisateur.getUtilisateur_mail());
+
+
+            stmt.executeUpdate();
+            stmt.close();
+
+
+            // Fermer la connexion
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

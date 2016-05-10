@@ -22,6 +22,9 @@ public interface UtilisateurDao {
 
     public void modifierMDP(String utilisateur_mail, String utilisateur_mdp);
 
+    public void mdpoublie(Utilisateur utilisateur);
+
+
 
 }
 

@@ -60,6 +60,9 @@
                         : ${sessionScope.sessionUtilisateur.utilisateur_mail}</p>
                 </c:if>--%>
             </form>
+            <div class="row center">
+                <a class="blue-text" href="/mdpoublie">Mot de passe oublié?</a>
+            </div>
 
 
         </div>

@@ -1,6 +1,4 @@
-
 package hei.devweb.evenement.servlet;
-
 
 import hei.devweb.evenement.daos.DataSourceProvider;
 import hei.devweb.evenement.entites.SendTextMessage;
@@ -21,11 +19,15 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/inscription")
-public class InscriptionServlet extends HttpServlet {
-    public static final String CHAMP_EMAIL = "utilisateur_mail_inscription";
+/**
+ * Created by Cesar on 10/05/16.
+ */
+
+@WebServlet("/mdpoublie")
+public class mdpoublie extends HttpServlet {
+    public static final String CHAMP_EMAIL = "utilisateur_mail";
     public static final String ATT_ERREURS = "erreurs";
-    public static final String VUE = "/WEB-INF/inscription.jsp";
+    public static final String VUE = "/WEB-INF/mdpoublie.jsp";
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,7 +37,7 @@ public class InscriptionServlet extends HttpServlet {
         Map<String, String> erreurs = new HashMap<String, String>();
 
 
-        String utilisateur_mail = request.getParameter("utilisateur_mail_inscription");
+        String utilisateur_mail = request.getParameter("utilisateur_mail");
         System.out.println("recuperation" + utilisateur_mail);
 
 
@@ -54,23 +56,25 @@ public class InscriptionServlet extends HttpServlet {
             System.out.println("erreur : " + erreurs);
 
         }
+
+
         if (erreurs.isEmpty()) {
             String utilisateur_mdp = generate();
-            Utilisateur nouvelUtilisateur = new Utilisateur(null, utilisateur_mail, utilisateur_mdp, 0);
+            Utilisateur nouvelUtilisateur = new Utilisateur(null, utilisateur_mail, utilisateur_mdp, null);
 
 
-            UtilisateurManager.getInstance().ajouterUtilisateur(nouvelUtilisateur);
+            UtilisateurManager.getInstance().mdpoublie(nouvelUtilisateur);
 
             SendTextMessage envoyeurDeMail = new SendTextMessage();
 
 
             try {
                 String message = "Hello,\n\n"
-                        + "Tu viens de t'inscrire sur WePlan.\n"
-                        + "Voici ton mot de passe généré aléatoirement :  " + utilisateur_mdp + "\n\n"
+                        + "Tu viens de modifier ton mot de passe WePlan.\n"
+                        + "Voici ton nouveau mot de passe :  " + utilisateur_mdp + "\n\n"
                         + "A bientôt sur WePlanHei!";
                 envoyeurDeMail.envoyer_email("smtp.gmail.com", "465", "weplanhei@gmail.com",
-                        utilisateur_mail, "Bienvenue sur WePlan",
+                        utilisateur_mail, "Mot de passe oublié",
                         message);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -78,7 +82,7 @@ public class InscriptionServlet extends HttpServlet {
 
 
              /* Redirection vers confirmation inscription ! */
-            response.sendRedirect("confirmationinscription");
+            response.sendRedirect("/connexion");
         } else {
 
             /* Stockage du résultat et des messages d'erreur dans l'objet request */
@@ -101,20 +105,16 @@ public class InscriptionServlet extends HttpServlet {
         if (email != null && email.trim().length() != 0) {
             if (!email.matches("^[a-z-]*\\.[a-z-]*@hei\\.fr$")) {
                 throw new Exception("Merci de saisir une adresse mail de la forme prenom.nom@hei.fr.");
-            } else {
+            }else{
                 try {
-                    System.out.println("Connexion a la bdd pour vérifier existance du compte");
-                    System.out.println("email a tester : " +email);
-
-
                     Connection connection = DataSourceProvider.getDataSource().getConnection();
 
                     Statement stmt = connection.createStatement();
                     ResultSet results = stmt.executeQuery("SELECT COUNT(*) AS total FROM utilisateur WHERE utilisateur_mail = '" + email + "'");
                     results.next();
 
-                    if (results.getInt(1) >= 1) {
-                        throw new Exception("Le compte existe déjà");
+                    if(results.getInt(1)==0){
+                        throw new Exception("Le compte n'existe pas");
                     }
 
 
@@ -144,18 +144,11 @@ public class InscriptionServlet extends HttpServlet {
 
     }
 
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //super.doGet(request, response);
 
-
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/inscription.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/mdpoublie.jsp");
         view.forward(request, response);
-
-
     }
-
 }
-
-

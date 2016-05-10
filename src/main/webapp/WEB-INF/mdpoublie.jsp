@@ -28,7 +28,7 @@
     <div class="row">
       <form class="col s12" method="post" name="inscription">
         <h3 class="center blue-text flow-text" style="font-weight: 300;">
-          Inscription
+          Mot de passe oublié
         </h3>
 
 
@@ -37,17 +37,17 @@
 
 
             <label for="nom">Adresse email @hei.fr <span class="requis">*</span></label>
-            <input class="validate" type="email" id="email" name="utilisateur_mail_inscription"
+            <input class="validate" type="email" id="email" name="utilisateur_mail"
                    value="<c:out value="${utilisateur.utilisateur_mail}"/>"
                    size="20" maxlength="60"/>
-            <span class="erreur">${erreurs['utilisateur_mail_inscription']}</span>
+            <span class="erreur">${erreurs['utilisateur_mail']}</span>
           </div>
         </div>
 
         <div class="row">
           <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2" type="submit"
-                  value="Inscription"
-                  name="bouton">Inscription
+                  value="mdp"
+                  name="bouton">Envoyer un mail
           </button>
         </div>
 
