@@ -12,8 +12,10 @@
     <!--Import fullcalendar.css-->
     <link rel='stylesheet' href='CSS/fullcalendar.css'/>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="CSS/materialize.css"/>
-    <link type="text/css" rel="stylesheet" href="CSS/surcouche.css"/>
+    <link type="text/css" rel="stylesheet" href="inc/materialize.css"/>
+    <link type="text/css" rel="stylesheet" href="inc/surcouche.css"/>
+
+
 
 
 

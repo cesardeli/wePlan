@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $(".button-collapse").sideNav();
+
 
     $(".dropdown-button").dropdown();
 
@@ -104,4 +106,9 @@ evenements.forEach(function (evenement) {
         start: evenement.evenement_date_debutTevenement.evenement_heure_debutZ;
         end: evenement.evenement_date_finTevenement.evenement_heure_finZ;
     }
+
+
 });
+
+
+

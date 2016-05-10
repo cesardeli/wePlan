@@ -75,12 +75,31 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
 }
 
-.fc-today {
-    background-color: red;
-}
 
-a.fc-event {
+
+a a.fc-event {
     cursor: pointer;
 }
 
+form .erreur {
+    color: #dd3333;
+}
 
+.maj:first-letter {
+    text-transform:capitalize;
+}
+
+.side-nav a{
+    padding: 0 30px;
+}
+
+.side-nav li{
+    padding: 0px;
+}
+
+ul li a {
+    padding: 0 16px;
+}
+menu {
+    padding-top: 200px;
+}
