@@ -4,7 +4,9 @@ import hei.devweb.evenement.entites.Utilisateur;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Constance on 20/04/2016.
@@ -159,6 +161,29 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
         }
     }
 
+    @Override
+    public void modifierMDP(String utilisateur_mail, String utilisateur_mdp) {
+        try
+
+        {
+            Connection connection = DataSourceProvider.getDataSource().getConnection();
+            PreparedStatement stmt = connection.prepareStatement("UPDATE  utilisateur SET utilisateur_mdp=? WHERE utilisateur_mail=?");
+
+            stmt.setString(1, utilisateur_mdp);
+            stmt.setString(2, utilisateur_mail);
+
+            stmt.executeUpdate();
+            stmt.close();
+            connection.close();
+        } catch (
+                SQLException e
+                )
+
+        {
+            e.printStackTrace();
+        }
+
+    }
 
 
 }

@@ -1,26 +1,73 @@
 package hei.devweb.evenement.servlet;
 
-import javax.servlet.RequestDispatcher;
+import hei.devweb.evenement.daos.ConnexionForm;
+import hei.devweb.evenement.entites.Utilisateur;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/accueil")
+@WebServlet("/connexion")
 public class AccueilServlet extends HttpServlet {
+    public static final String ATT_USER = "utilisateur";
+    public static final String ATT_FORM = "form";
+    public static final String ATT_SESSION_USER = "sessionUtilisateur";
+    public static final String VUE = "/WEB-INF/connexion.jsp";
 
-    private static final long serialVersionUID = 6880801727716084460L;
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //super.doGet(request, response);
-
-
-                RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/index.jsp"); //Faire JSP
-        view.forward(request, response);
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /* Affichage de la page de connexion */
+        this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+        System.out.println("AccueilServlet");
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
+        /* Préparation de l'objet formulaire */
+        ConnexionForm form = new ConnexionForm();
+
+        /* Traitement de la requête et récupération du bean en résultant */
+        Utilisateur utilisateur = null;
+        try {
+            System.out.println(form.connecterUtilisateur(request));
+            utilisateur = form.connecterUtilisateur(request);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        /* Récupération de la session depuis la requête */
+        HttpSession session = request.getSession();
+
+
+        /**
+         * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
+         * Utilisateur à la session, sinon suppression du bean de la session.
+         */
+        if (form.getErreurs().isEmpty()) {
+            session.setAttribute(ATT_SESSION_USER, utilisateur);
+
+
+
+             /* Redirection vers calendrier ! */
+            response.sendRedirect("/calendrier");
+
+        } else {
+            session.setAttribute(ATT_SESSION_USER, null);
+
+            /* Stockage du formulaire et du bean dans l'objet request */
+            request.setAttribute(ATT_FORM, form);
+            request.setAttribute(ATT_USER, utilisateur);
+
+            this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+        }
+
+
+    }
 }
 

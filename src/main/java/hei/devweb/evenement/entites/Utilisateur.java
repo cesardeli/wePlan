@@ -49,9 +49,6 @@ public class Utilisateur {
         this.utilisateur_mdp = utilisateur_mdp;
         this.utilisateur_type = utilisateur_type;
     }
-
-
-
 }
 
 

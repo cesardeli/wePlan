@@ -31,7 +31,7 @@ public class ConfirmationInscriptionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/confirmationinscription.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/restreint/confirmationinscription.jsp");
         view.forward(request, response);
     }
 

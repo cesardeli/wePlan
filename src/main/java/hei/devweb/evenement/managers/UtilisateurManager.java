@@ -55,9 +55,6 @@ public class UtilisateurManager {
     }
 
 
-
-
-
     public void ajouterUtilisateur(Utilisateur nouvelUtilisateur) {
         // TODO Auto-generated method stub
         System.out.println("Dans Méthode : ajouterUtilisateur");
@@ -67,6 +64,17 @@ public class UtilisateurManager {
 		}
 		*/
         UtilisateurDao.ajouterUtilisateur(nouvelUtilisateur);
+    }
+
+    public void modifierMDP(String utilisateur_mail, String utilisateur_mdp) {
+// TODO Auto-generated method stub
+        System.out.println("Dans UtilisateurManager : modifierMDP");
+
+        try {
+            UtilisateurDao.modifierMDP(utilisateur_mail, utilisateur_mdp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

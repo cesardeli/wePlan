@@ -1,57 +1,75 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link href="CSS/connexion.css" rel="stylesheet" type="text/css" media="all"/>
-		<link href="CSS/header.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
-		<title>WePlan</title>
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-	</head>
+<%@ page language="java" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-	<body>
-		<header id="ban">
+<!DOCTYPE html>
+<html lang="fr">
 
-			<h1>WePlan</h1>
-			<h2>Toute la vie associative d'Hei</h2>
-		
-		</header>
+<%@ include file="header.jsp" %>
+
+<body class="grey lighten-4">
+
+<nav>
+    <div class="nav-wrapper red">
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="card-panel white">
+        <div class="row">
+            <form class="col s12" method="post" name="connexion">
+                <h3 class="center blue-text flow-text" style="font-weight: 300;">
+                    Connexion
+                </h3>
 
 
+                <div class="row">
+                    <div class="input-field col offset-m2 s12 m8">
 
 
-	<div id="contenu">	
-		
-
-		<a id="inscription" href="inscription.html">
-			<h1 class="titre"> Pas encore de compte ? </h1>
-			<h1 class="titre"> Inscrivez vous</h1>
-		</a>
-
-		
-
-	
-			
-		<section >
-			<h2>Connectez vous</h2>
-
-			<form action="/users/login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">
-                <div class="formulaire">
-                <input name="username" placeholder="prenom.nom@hei.fr" class="form-control" type="text" id="UserUsername" required/>
-              	</div>
-                <div class="formulaire">
-                <input name="password" placeholder="Mot de passe" class="form-control" type="password" id="UserPassword" required/>
+                        <label for="nom">Adresse email @hei.fr <span class="requis">*</span></label>
+                        <input class="validate" type="email" id="email" name="email"
+                               value="<c:out value="${utilisateur.utilisateur_mail}"/>"
+                               size="20" maxlength="60"/>
+                        <span class="erreur">${form.erreurs['email']}</span>
+                    </div>
                 </div>
-                <div>
-                <input  class="btn" type="submit" value="Connexion"/>
-            	</div>
+                <div class="row">
+                    <div class="input-field col offset-m2 s12 m8">
+
+                        <label for="nom">Mot de passe <span class="requis">*</span></label>
+                        <input class="validate" type="password" id="motdepasse" name="motdepasse"
+                               value="<c:out value="${utilisateur.utilisateur_mdp}"/>" size="20"
+                               maxlength="20"/>
+                        <span class="erreur">${form.erreurs['motdepasse']}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="waves-effect waves-light btn col offset-m4 offset-l5 s12 m4 l2" type="submit"
+                            value="Connexion"
+                            name="bouton">Connexion
+                    </button>
+                </div>
+
+                <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
+
+                <%--&lt;%&ndash; Vérification de la présence d'un objet utilisateur en session &ndash;%&gt;
+                <c:if test="${!empty sessionScope.sessionUtilisateur}">
+                    &lt;%&ndash; Si l'utilisateur existe en session, alors on affiche son adresse email. &ndash;%&gt;
+                    <p class="succes">Vous êtes connecté(e) avec l'adresse
+                        : ${sessionScope.sessionUtilisateur.utilisateur_mail}</p>
+                </c:if>--%>
             </form>
 
-           <a id="aide" href="http://images.google.fr/imgres?imgurl=https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMOAAAAJGQ4MWIxNzdhLTZkMmUtNDRlZi05ODczLWIxZTVjMDkwMzdjNw.jpg&imgrefurl=https://fr.linkedin.com/in/cesardeligny&h=200&w=200&tbnid=w5OVHGl2nGKimM:&tbnh=90&tbnw=90&docid=j1eiEap0BQiDOM&usg=__Nxx2R-PopXyys7FwYRsgcxnVMoU=&sa=X&ved=0ahUKEwi9huPWqsXKAhXGCBoKHTkKDgMQ9QEIHjAA"> Besoin d'aide ?</a>
 
-		</section>
-	</div>
+        </div>
+    </div>
+    <div class="row center">
+        <a class="blue-text" href="/inscription">Pas encore de compte? Inscris-toi</a>
+    </div>
+</div>
 
+<%@ include file="footer.jsp" %>
 
-	</body>
+</body>
 </html>
